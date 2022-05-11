@@ -116,3 +116,16 @@ void MainWindow::confirmAddtoCart(QString parameters){
     }
 }
 
+void MainWindow::on_CheckoutButton_clicked()
+{
+    if(!CurrentOrders.empty()){
+        CheckoutWindow *checkoutWindow = new CheckoutWindow(this);
+        checkoutWindow->setWindowModality(Qt::ApplicationModal);
+        checkoutWindow->show();
+    }
+    else{
+        QMessageBox::information(this, "Empty cart", "Please select an order before checking out.");
+    }
+
+}
+

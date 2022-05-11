@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "confirmaddtocart.h"
+#include "checkoutwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,8 +20,13 @@ public:
 private slots:
     void on_listView_clicked(const QModelIndex &index);
     void confirmAddtoCart(QString parameters);
+
+
+    void on_CheckoutButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     ConfirmAddToCart *confirmAddtoCartWindow;
+    CheckoutWindow *checkoutWindow;
 };
 #endif // MAINWINDOW_H

@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/files">
         <file>resources/products.csv</file>
+        <file>resources/deliverymethods.csv</file>
+        <file>resources/paymentmethods.csv</file>
+        <file>resources/promocodes.csv</file>
     </qresource>
 </RCC>
