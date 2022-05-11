@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "confirmaddtocart.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,12 +17,10 @@ public:
     ~MainWindow();
 
 private slots:
-
-
-
     void on_listView_clicked(const QModelIndex &index);
-
+    void confirmAddtoCart(QString parameters);
 private:
     Ui::MainWindow *ui;
+    ConfirmAddToCart *confirmAddtoCartWindow;
 };
 #endif // MAINWINDOW_H

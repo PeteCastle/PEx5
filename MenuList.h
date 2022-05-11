@@ -18,8 +18,9 @@ struct CollectiveDetails{
     vector<int> amount;
     double price;
 };
-
 extern vector<struct MenuDetails> MenuList;
+extern vector<tuple<QString,double,int>> CurrentOrders;
+
 extern QStringList CategoriesList;
 extern vector<struct CollectiveDetails> CollectiveList;
 
