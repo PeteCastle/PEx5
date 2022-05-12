@@ -1,5 +1,4 @@
-#include "mainwindow.h"
-
+#include "landingpage.h"
 #include <QApplication>
 #include <QFile>
 #include <QMessageBox>
@@ -104,7 +103,9 @@ int main(int argc, char *argv[])
     PaymentsListFile.close();
 
 
-    MainWindow w;
-    w.show();
+    LandingPage ui;
+    ui.show();
+
+
     return a.exec();
 }

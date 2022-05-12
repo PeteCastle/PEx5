@@ -137,6 +137,8 @@ void CheckoutWindow::on_PlacePrderButton_clicked()
     CurrentOrders.clear();
     this->close();
     previous->close();
+
+
 }
 
 QString CheckoutWindow::generateReceipt(){
