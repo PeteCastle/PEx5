@@ -10,19 +10,15 @@
 #include <QDir>
 #include <QTextStream>
 
-
 QStringList PromoCodesName;
 double baseTotal, deliveryCharge, paymentCharge, discount, grandTotal, valueAddedTax;
 QString selectedPromoCode = "(none)";
-QWidget *previous;
 
 CheckoutWindow::CheckoutWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CheckoutWindow)
 {
     ui->setupUi(this);
-
-    previous = parent;
 
     for(int i=0; i<PaymentsList.size();i++){
         ui->PaymentMethod->addItem(PaymentsList[i].paymentTypeName);
@@ -123,20 +119,13 @@ void CheckoutWindow::on_PlacePrderButton_clicked()
     orderSuccessful.setWindowTitle("Order Success");
 
 
-    QAbstractButton *newOrderButton = orderSuccessful.addButton("New Order", QMessageBox::NoRole);
-    QAbstractButton *viewReceiptButton = orderSuccessful.addButton("View My Receipt", QMessageBox::YesRole);
+    QAbstractButton *newOrderButton = orderSuccessful.addButton("New Order", QMessageBox::YesRole);
+    QAbstractButton *viewReceiptButton = orderSuccessful.addButton("View My Receipt", QMessageBox::NoRole);
+
 
     orderSuccessful.setIcon(QMessageBox::Information);
     orderSuccessful.exec();
 
-    if(orderSuccessful.clickedButton()==viewReceiptButton){
-        ViewReceipt *viewReceipt = new ViewReceipt(this, receipt);
-        viewReceipt->setWindowTitle("Recipe");
-        viewReceipt->exec();
-    }
-    CurrentOrders.clear();
-    this->close();
-    previous->close();
 }
 
 QString CheckoutWindow::generateReceipt(){
@@ -153,6 +142,12 @@ QString CheckoutWindow::generateReceipt(){
     QString hostName = QSysInfo::machineHostName();
 
     qDebug() << now.toString() << transactionCode << hostName;
+
+    //GET BUSINESS INFO
+    QString restaurantName = "TEST RESTAURANT";
+    QString businessName = "TEST COMPANY";
+    QString taxIdentificationNumber = "TEST TIN";
+
 
     //GENERATE LOG INFO
     QDir dir;
@@ -171,30 +166,39 @@ QString CheckoutWindow::generateReceipt(){
         QMessageBox::warning(this,"","TEST");
     }
 
-    QTextStream output(&logFile);
+    QTextStream input(&logFile);
 
-    output << "Transaction ID:\t" << transactionCode << "\n";
-    output << "Transaction Date:\t" << date << "\n";
-    output << "Transaction Time:\t" << time << "\n";
+    input << "Transaction ID:\t" << transactionCode << "\n";
+    input << "Transaction Date:\t" << date << "\n";
+    input << "Transaction Time:\t" << time << "\n\n";
+    input << "Orders:\n";
 
     int totalNumberofItems=0;
     for(int i=0; i<CurrentOrders.size();i++){
-        output << "Orders:\t" << get<0>(CurrentOrders[i]) << "\t" << get<2>(CurrentOrders[i])  <<" \t" << get<1>(CurrentOrders[i]) / get<2>(CurrentOrders[i]) << "\t" << get<1>(CurrentOrders[i]) << "\t"  << "\n";
+        input << "\t" << get<0>(CurrentOrders[i]) << "\t" << get<2>(CurrentOrders[i])  <<" \t" << get<1>(CurrentOrders[i]) / get<2>(CurrentOrders[i]) << "\t" << get<1>(CurrentOrders[i]) << "\t"  << "\n";
         totalNumberofItems++;
     }
-    output << "Total Number of Items:\t" << totalNumberofItems << "\n";
-    output << "Subtotal:\t" << baseTotal << "\n";
-    output << "Delivery Charge:\t" << deliveryCharge<< "\n";
-    output << "Payment Charge:\t" << paymentCharge<< "\n";
-    output << "Value Added Tax:\t" << valueAddedTax<< "\n";
-    output << "Discount:\t" << discount << "\n";
-    output << "Grand Total:\t" << grandTotal << "\n";
-    output << "Paid Amount:\t" << 0 << "\n";
-    output << "Change:\t" << 0 << "\n";
-    output << "Cashier:\t" << hostName << "\n";
-    output << "Payment Method:\t" << ui->PaymentMethod->currentText() <<"\n";
-    output << "Delivery Method:\t" << ui->DeliveryMethod->currentText()<< "\n";
-    output << "Promo Code:\t" << selectedPromoCode << "\n\n";
+    input << "Total Number of Items:\t" << totalNumberofItems << "\n\n";
+
+    input << "Subtotal:\t" << baseTotal << "\n";
+    input << "Delivery Charge:\t" << deliveryCharge<< "\n";
+    input << "Payment Charge:\t" << paymentCharge<< "\n";
+    input << "Value Added Tax:\t" << valueAddedTax<< "\n";
+    input << "Discount:\t" << discount << "\n";
+    input << "Grand Total:\t" << grandTotal << "\n";
+    input << "Paid Amount:\t" << 0 << "\n";
+    input << "Change:\t" << 0 << "\n\n";
+
+
+
+    input << "Cashier:\t" << hostName << "\n";
+    input << "Payment Method:\t" << ui->PaymentMethod->currentText() <<"\n";
+    input << "Delivery Method:\t" << ui->DeliveryMethod->currentText()<< "\n";
+
+    input << "Promo Code:\t" << selectedPromoCode << "\n\n";
+
+
+
 
     logFile.flush();
     logFile.close();

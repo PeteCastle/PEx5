@@ -6,17 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>811</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 108, 78);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="25,25,50">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QLabel" name="Logo">
         <property name="text">
@@ -25,27 +31,44 @@
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLabel" name="OtherLabel3">
-          <property name="text">
-           <string>Restaurant Name</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="OtherLabel4">
-          <property name="text">
-           <string>Restaurant Tagline if u want</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QWidget" name="" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="OtherLabel3">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Restaurant Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="OtherLabel4">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Restaurant Tagline if u want</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="OtherLabel1">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);
+</string>
+          </property>
           <property name="text">
            <string>Your Receipt</string>
           </property>
@@ -53,6 +76,11 @@
         </item>
         <item>
          <widget class="QLabel" name="OtherLabel2">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);
+</string>
+          </property>
           <property name="text">
            <string>This receipt becomes official once paid.</string>
           </property>
@@ -74,7 +102,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableWidget"/>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(250, 240, 202);
+</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -95,36 +128,83 @@
         </item>
         <item>
          <widget class="QLabel" name="PaymentMethodLabel">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Payment Method</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="PaymentMethod"/>
+         <widget class="QComboBox" name="PaymentMethod">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="DeliveryMethodLabel">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Dine In / Take Out</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="DeliveryMethod"/>
+         <widget class="QComboBox" name="DeliveryMethod">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="PromoCodeLabel">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Promo Code</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="PromoCode"/>
+         <widget class="QLineEdit" name="PromoCode">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="PromoCodeApplyButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+          </property>
           <property name="text">
            <string>Apply</string>
           </property>
@@ -155,6 +235,10 @@
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QLabel" name="AdditionalChargeLabel">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Additional Charges</string>
             </property>
@@ -162,6 +246,10 @@
           </item>
           <item>
            <widget class="QLabel" name="AdditionalCharge">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>TextLabel</string>
             </property>
@@ -169,6 +257,10 @@
           </item>
           <item>
            <widget class="QLabel" name="VATLabel">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>VAT</string>
             </property>
@@ -176,6 +268,10 @@
           </item>
           <item>
            <widget class="QLabel" name="VAT">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>TextLabel</string>
             </property>
@@ -183,6 +279,10 @@
           </item>
           <item>
            <widget class="QLabel" name="DiscountsLabel">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Discounts</string>
             </property>
@@ -190,6 +290,10 @@
           </item>
           <item>
            <widget class="QLabel" name="Discounts">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>TextLabel</string>
             </property>
@@ -201,6 +305,10 @@
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QLabel" name="GrandTotalLabel">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Grand Total:</string>
             </property>
@@ -208,6 +316,10 @@
           </item>
           <item>
            <widget class="QLabel" name="GrandTotal">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(250, 240, 202);
+color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>TextLabel</string>
             </property>
@@ -219,6 +331,15 @@
       </item>
       <item>
        <widget class="QPushButton" name="PlacePrderButton">
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+        </property>
         <property name="text">
          <string>Place Order</string>
         </property>

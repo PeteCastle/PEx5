@@ -54,6 +54,8 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
     for(int i=0; i<MenuList.size();i++){
         if(MenuList[i].category==CategoriesList[index.row()]){
             QPushButton *newButton = new QPushButton(this);
+            newButton->setStyleSheet("background-color: #FAF0CA");
+//            newButton->setStyleSheet("border-color: #FAF0CA");
             newButton->setText(MenuList[i].name);
             layout->addWidget(newButton);
             qDebug() << MenuList[i].category <<  CategoriesList[index.row()];

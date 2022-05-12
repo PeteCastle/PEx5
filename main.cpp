@@ -1,11 +1,10 @@
 #include "mainwindow.h"
-
+#include <QFontDatabase>
 #include <QApplication>
 #include <QFile>
 #include <QMessageBox>
 #include "MenuList.h"
 #include <QDebug>
-#include <QFontDatabase>
 
 vector<struct MenuDetails> MenuList={};
 vector<struct CollectiveDetails> CollectiveList={};
@@ -23,8 +22,9 @@ QStringList CategoriesList={};
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    QFontDatabase::addApplicationFont(":/fonts/fonts/Monaco.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/fonts/LiberationSerif-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/fonts/BerkshireSwash-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/fonts/LiberationSerif-Bold.ttf");
 
     QString productsFileLocation = ":/files/resources/products.csv";
     QString deliveryFileLocation = ":/files/resources/deliverymethods.csv";
