@@ -5,4 +5,7 @@
         <file>resources/paymentmethods.csv</file>
         <file>resources/promocodes.csv</file>
     </qresource>
+    <qresource prefix="/fonts">
+        <file>fonts/Monaco.ttf</file>
+    </qresource>
 </RCC>

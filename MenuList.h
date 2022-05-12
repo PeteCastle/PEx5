@@ -2,6 +2,7 @@
 #define MENULIST_H
 #include <QString>
 #include <QStringList>
+#include <QDateTime>
 using namespace std;
 
 struct MenuDetails{
@@ -33,6 +34,28 @@ struct PaymentMethods{
 struct DeliveryMethods{
     QString deliveryName;
     double deliveryCharge;
+};
+struct ReceiptStructure{
+    QString transactionID;
+    QDateTime transactionDate;
+    QDateTime transactionTime;
+    QList<QString> orderNames;
+    QList<double> orderPricePerQuantity;
+    QList<int> orderQuantity;
+    QList<double> orderPrice;
+    int totalNumberOfItems;
+    double subTotal;
+    double deliveryCharge;
+    double paymentCharge;
+    double valueAddedTax;
+    double discount;
+    double grandTotal;
+    double paidAmount;
+    double change;
+    QString cashier;
+    QString paymentMethod;
+    QString deliveryMethod;
+    QString promoCode;
 };
 
 extern vector<struct MenuDetails> MenuList;

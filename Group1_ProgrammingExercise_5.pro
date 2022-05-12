@@ -11,7 +11,9 @@ CONFIG += c++17
 SOURCES += \
     checkoutwindow.cpp \
     confirmaddtocart.cpp \
+    landingpage.cpp \
     main.cpp \
+    mainadminwindow.cpp \
     mainwindow.cpp \
     viewreceipt.cpp
 
@@ -19,12 +21,16 @@ HEADERS += \
     MenuList.h \
     checkoutwindow.h \
     confirmaddtocart.h \
+    landingpage.h \
+    mainadminwindow.h \
     mainwindow.h \
     viewreceipt.h
 
 FORMS += \
     checkoutwindow.ui \
     confirmaddtocart.ui \
+    landingpage.ui \
+    mainadminwindow.ui \
     mainwindow.ui \
     viewreceipt.ui
     confirmaddtocart.ui
