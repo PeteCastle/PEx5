@@ -12,18 +12,21 @@ SOURCES += \
     checkoutwindow.cpp \
     confirmaddtocart.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    viewreceipt.cpp
 
 HEADERS += \
     MenuList.h \
     checkoutwindow.h \
     confirmaddtocart.h \
-    mainwindow.h
+    mainwindow.h \
+    viewreceipt.h
 
 FORMS += \
     checkoutwindow.ui \
     confirmaddtocart.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    viewreceipt.ui
     confirmaddtocart.ui
 
 # Default rules for deployment.

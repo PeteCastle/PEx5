@@ -23,6 +23,11 @@ private slots:
     void on_PaymentMethod_currentIndexChanged(int index);
     void on_DeliveryMethod_currentIndexChanged(int index);
     void on_PromoCodeApplyButton_clicked();
+    void on_PlacePrderButton_clicked();
+    QString generateReceipt();
+
+public slots:
+    QString generateTransactionCode(const int len=12);
 };
 
 #endif // CHECKOUTWINDOW_H
