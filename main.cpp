@@ -5,6 +5,7 @@
 #include "MenuList.h"
 #include <QDebug>
 #include <QFontDatabase>
+#include <QDir>
 
 vector<struct MenuDetails> MenuList={};
 vector<struct CollectiveDetails> CollectiveList={};
@@ -19,16 +20,28 @@ DeliveryMethods tempDelivery;
 
 QStringList CategoriesList={};
 
+
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     QFontDatabase::addApplicationFont(":/fonts/fonts/Monaco.ttf");
 
+    QDir *dir = new QDir();
+    QString resourcesFileAbsolute = dir->absolutePath();
+    QString productsFileLocation = resourcesFileAbsolute + "/resources/products.csv";
+    QString deliveryFileLocation = resourcesFileAbsolute + "/resources/deliverymethods.csv";
+    QString paymentsFileLocation = resourcesFileAbsolute + "/resources/paymentmethods.csv";
+    QString promosFileLocation = resourcesFileAbsolute + "/resources/promocodes.csv";
+
+    //Removed all csv files in resource files as they need to be modified constantly, instead they are transferred in normal directory
+    /*
     QString productsFileLocation = ":/files/resources/products.csv";
     QString deliveryFileLocation = ":/files/resources/deliverymethods.csv";
     QString paymentsFileLocation = ":/files/resources/paymentmethods.csv";
-    QString promosFileLocation = ":/files/resources/promocodes.csv";
+    QString promosFileLocation = ":/files/resources/promocodes.csv";*/
 
     QFile ProductsFile(productsFileLocation);
     if (!ProductsFile.open(QIODevice::ReadOnly | QIODevice::Text)){

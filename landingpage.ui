@@ -14,45 +14,29 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>150</y>
-      <width>441</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PINAKA FRONT PAGE</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="customerButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>230</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>CUSTOMER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="adminButton">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>380</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>ADMIN</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>PINAKA FRONT PAGE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="customerButton">
+      <property name="text">
+       <string>CUSTOMER</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="adminButton">
+      <property name="text">
+       <string>ADMIN</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

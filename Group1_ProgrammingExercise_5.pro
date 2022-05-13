@@ -16,7 +16,6 @@ SOURCES += \
     main.cpp \
     mainadminwindow.cpp \
     mainwindow.cpp \
-    qcustomplot.cpp \
     viewreceipt.cpp
 
 HEADERS += \
@@ -27,7 +26,6 @@ HEADERS += \
     landingpage.h \
     mainadminwindow.h \
     mainwindow.h \
-    qcustomplot.h \
     viewreceipt.h
 
 FORMS += \

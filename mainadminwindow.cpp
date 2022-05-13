@@ -25,7 +25,7 @@ void MainAdminWindow::on_ModifyInventoryButton_clicked()
 
 void MainAdminWindow::on_ShowInventoryButton_clicked()
 {
-    InventoryWindow *inventoryWindow = new InventoryWindow(this, 0);
+    InventoryWindow *inventoryWindow = new InventoryWindow(this, 2);
     inventoryWindow->setWindowModality(Qt::ApplicationModal);
     inventoryWindow->show();
 }
