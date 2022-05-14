@@ -37,9 +37,9 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="AddPromoCodeButton">
+     <widget class="QPushButton" name="ModifyPromoCodesButton">
       <property name="text">
-       <string>Add Promo Code</string>
+       <string>Modify Promo Codes</string>
       </property>
      </widget>
     </item>

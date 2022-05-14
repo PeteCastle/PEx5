@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainadminwindow.cpp \
     mainwindow.cpp \
+    promocodeswindow.cpp \
     viewreceipt.cpp
 
 HEADERS += \
@@ -26,6 +27,7 @@ HEADERS += \
     landingpage.h \
     mainadminwindow.h \
     mainwindow.h \
+    promocodeswindow.h \
     viewreceipt.h
 
 FORMS += \
@@ -35,6 +37,7 @@ FORMS += \
     landingpage.ui \
     mainadminwindow.ui \
     mainwindow.ui \
+    promocodeswindow.ui \
     viewreceipt.ui
     confirmaddtocart.ui
 

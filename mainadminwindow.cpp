@@ -30,3 +30,10 @@ void MainAdminWindow::on_ShowInventoryButton_clicked()
     inventoryWindow->show();
 }
 
+void MainAdminWindow::on_ModifyPromoCodesButton_clicked()
+{
+    PromoCodesWindow *promoCodesWindow = new PromoCodesWindow(this);
+    promoCodesWindow->setWindowModality(Qt::ApplicationModal);
+    promoCodesWindow->show();
+}
+
