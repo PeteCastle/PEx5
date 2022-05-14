@@ -39,7 +39,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QListWidget" name="CategoriesList"/>
+       <widget class="QListWidget" name="CategoriesList">
+        <property name="currentRow">
+         <number>-1</number>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="SaveButton">

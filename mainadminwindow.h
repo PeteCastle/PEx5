@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include "inventorywindow.h"
 #include "promocodeswindow.h"
+#include "askcredentials.h"
+#include "productswindow.h"
+
 namespace Ui {
 class MainAdminWindow;
 }
@@ -27,10 +30,16 @@ private slots:
 
     void on_ModifyPromoCodesButton_clicked();
 
+    void on_ChangePasswordButton_clicked();
+
+    void on_AddProductButton_clicked();
+
 private:
     Ui::MainAdminWindow *ui;
     InventoryWindow *inventoryWindow;
     PromoCodesWindow *promoCodesWindow;
+    AskCredentials *askCredentials;
+    ProductsWindow *productsWindow;
 };
 
 #endif // MAINADMINWINDOW_H

@@ -18,6 +18,8 @@ PaymentMethods tempPayment;
 PromoCodes tempPromo;
 DeliveryMethods tempDelivery;
 
+QString username;
+QString password;
 QStringList CategoriesList={};
 
 
@@ -35,6 +37,7 @@ int main(int argc, char *argv[])
     QString deliveryFileLocation = resourcesFileAbsolute + "/resources/deliverymethods.csv";
     QString paymentsFileLocation = resourcesFileAbsolute + "/resources/paymentmethods.csv";
     QString promosFileLocation = resourcesFileAbsolute + "/resources/promocodes.csv";
+    QString credentialsFileLocation = resourcesFileAbsolute + "/resources/credentials.dat";
 
     //Removed all csv files in resource files as they need to be modified constantly, instead they are transferred in normal directory
     /*
@@ -115,6 +118,15 @@ int main(int argc, char *argv[])
     }
     PaymentsListFile.close();
 
+    QFile CredentialsFile(credentialsFileLocation);
+    if (!CredentialsFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+          QMessageBox::warning(nullptr, "File not found error", "DAT file " + credentialsFileLocation + " not found.");
+          return 0;
+    }
+    QStringList tempCredentials = QString(CredentialsFile.readLine()).split(",");
+    username = tempCredentials[0];
+    password = tempCredentials[1];
+    CredentialsFile.close();
 
     LandingPage ui;
     ui.show();

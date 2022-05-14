@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    askcredentials.cpp \
     checkoutwindow.cpp \
     confirmaddtocart.cpp \
     inventorywindow.cpp \
@@ -16,27 +17,32 @@ SOURCES += \
     main.cpp \
     mainadminwindow.cpp \
     mainwindow.cpp \
+    productswindow.cpp \
     promocodeswindow.cpp \
     viewreceipt.cpp
 
 HEADERS += \
     MenuList.h \
+    askcredentials.h \
     checkoutwindow.h \
     confirmaddtocart.h \
     inventorywindow.h \
     landingpage.h \
     mainadminwindow.h \
     mainwindow.h \
+    productswindow.h \
     promocodeswindow.h \
     viewreceipt.h
 
 FORMS += \
+    askcredentials.ui \
     checkoutwindow.ui \
     confirmaddtocart.ui \
     inventorywindow.ui \
     landingpage.ui \
     mainadminwindow.ui \
     mainwindow.ui \
+    productswindow.ui \
     promocodeswindow.ui \
     viewreceipt.ui
     confirmaddtocart.ui

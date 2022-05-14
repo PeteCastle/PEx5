@@ -1,6 +1,7 @@
 #include "landingpage.h"
 #include "ui_landingpage.h"
 
+
 LandingPage::LandingPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LandingPage)
@@ -21,10 +22,19 @@ void LandingPage::on_customerButton_clicked()
 }
 
 
-void LandingPage::on_adminButton_clicked()
-{
-    MainAdminWindow *adminWindow = new MainAdminWindow(this);
-    adminWindow->show();
-    this->hide();
+void LandingPage::on_adminButton_clicked(){
+    /*
+    AskCredentials *askCredentials = new AskCredentials(this,1);
+    askCredentials->setWindowModality(Qt::ApplicationModal);
+    askCredentials->exec();
+
+    bool test = askCredentials->getResult();
+    qDebug() << test;
+
+    if(test){*/
+        MainAdminWindow *adminWindow = new MainAdminWindow(this);
+        adminWindow->show();
+        this->hide();
+    //}
 }
 

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "mainwindow.h"
 #include "mainadminwindow.h"
+#include "askcredentials.h"
 
 namespace Ui {
 class LandingPage;
@@ -26,6 +27,7 @@ private:
     Ui::LandingPage *ui;
     MainWindow *customerWindow;
     MainAdminWindow *adminWindow;
+    AskCredentials *askCredentials;
 };
 
 #endif // LANDINGPAGE_H

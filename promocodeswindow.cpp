@@ -25,10 +25,11 @@ PromoCodesWindow::~PromoCodesWindow()
 
 void PromoCodesWindow::on_RemovePromoCodeButton_clicked()
 {
-    int index = ui->PromoCodesList->currentRow();
-    TempPromosList.erase(TempPromosList.begin()+index);
-    updateTempPromoCodes();
-
+    if(ui->PromoCodesList->model()->rowCount()!=0){
+        int index = ui->PromoCodesList->currentRow();
+        TempPromosList.erase(TempPromosList.begin()+index);
+        updateTempPromoCodes();
+    }
 }
 void PromoCodesWindow::updateTempPromoCodes(){
     ui->PromoCodesList->clear();

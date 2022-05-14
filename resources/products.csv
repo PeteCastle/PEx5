@@ -1,14 +1,43 @@
-Name1,999.99,Category1,23
-Name2,23,Category1,23
-Name3,213,Category1,23
-Name4,3,Category4,23
-Name5,3,Category4,23
-Name6,3,Category1,23
-Name7,3,Category1,23
-Name8,21321,Category2,23
-Name9,21,Category2,0
-Name10,21,Category2,23
-Name11,21,Category2,23
-Name12,22,Category2,23
-Name13,3213,Category3,23
-Name14,222,Category3,23
+Plain Rice,47,100,Rice
+Garlic Rice,50,100,Rice
+Crab Rice,255,100,Rice
+Binagoongan Rice,275,100,Rice
+Seafood Rice,265,100,Rice
+Fried Chicken,325,100,Chicken
+Chicken Kebab,275,100,Chicken
+Sizzling Garlic Chicken,335,100,Chicken
+Spicy Garlic Fried Chicken,325,100,Chicken
+Sizzling Sisig,285,100,Pork
+Sisig Kilaw,395,100,Pork
+Pork BBQ,215,100,Pork
+Crispy Pata (Regular),645,100,Pork
+Crispy Pata (Family),815,100,Pork
+Lechon Kawali,395,100,Pork
+Inihaw na Liempo,355,100,Pork
+Stuffed Laing,275,100,Pork
+Beef Kare-Kare,535,100,Beef
+Prime Beef Kaldereta,455,100,Beef
+Inihaw na Bangus,355,100,Seafood
+Inihaw na Pusit,495,100,Seafood
+Inihaw na Baby Pusit,445,100,Seafood
+Sizzling Gambas,355,100,Seafood
+Inihaw na Tuna Belly,375,100,Seafood
+Bangus ala Pobre,365,100,Seafood
+Blue Marlin Steak,465,100,Seafood
+Blue Marlin Belly,485,100,Seafood
+Blue Marlin Ribs,375,100,Seafood
+Tuna Kilaw,365,100,Seafood
+Sugba Kilaw,415,100,Seafood
+Sinigang na Boneless Bangus,375,100,Soups
+Sinigang na Hipon,385,100,Soups
+Sinigang na Baboy,385,100,Soups
+Nilagang Bulalo,445,100,Soups
+Halo-Halo,135,100,Desserts
+Leche Flan,115,100,Desserts
+Buko Pandan,115,100,Desserts
+Sago't Gulaman,65,100,Drinks
+Mango Juice,80,100,Drinks
+Ice Tea Pitcher,95,100,Drinks
+Banana Shake,105,100,Drinks
+Pepsi,79,100,Drinks
+Bottled Water,55,100,Drinks

@@ -5,6 +5,8 @@
 #include <QDateTime>
 using namespace std;
 
+
+
 struct MenuDetails{
     QString name;
     QString category;
@@ -66,5 +68,7 @@ extern vector<struct CollectiveDetails> CollectiveList;
 extern vector<struct PaymentMethods> PaymentsList;
 extern vector<struct PromoCodes> PromosList;
 extern vector<struct DeliveryMethods> DeliveryList;
+
+extern QString username,password;
 
 #endif // MENULIST_H

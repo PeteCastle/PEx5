@@ -1,5 +1,7 @@
 #include "mainadminwindow.h"
 #include "ui_mainadminwindow.h"
+#include <QInputDialog>
+#include <QDir>
 
 MainAdminWindow::MainAdminWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -35,5 +37,21 @@ void MainAdminWindow::on_ModifyPromoCodesButton_clicked()
     PromoCodesWindow *promoCodesWindow = new PromoCodesWindow(this);
     promoCodesWindow->setWindowModality(Qt::ApplicationModal);
     promoCodesWindow->show();
+}
+
+
+void MainAdminWindow::on_ChangePasswordButton_clicked()
+{
+    bool yes;
+    AskCredentials *askCredentials = new AskCredentials(this,2);
+    askCredentials->show();
+    askCredentials->setWindowModality(Qt::ApplicationModal);
+}
+
+void MainAdminWindow::on_AddProductButton_clicked()
+{
+    ProductsWindow *productsWindow = new ProductsWindow(this);
+    productsWindow->setWindowModality(Qt::ApplicationModal);
+    productsWindow->show();
 }
 

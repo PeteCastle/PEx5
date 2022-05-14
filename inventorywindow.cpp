@@ -18,6 +18,8 @@
 vector<struct MenuDetails> menuTemp;
 int mode1;
 
+
+
 InventoryWindow::InventoryWindow(QWidget *parent, int mode) :
     QMainWindow(parent),
     ui(new Ui::InventoryWindow)
