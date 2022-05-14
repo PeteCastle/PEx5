@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>LandingPage</class>
  <widget class="QMainWindow" name="LandingPage">
   <property name="geometry">
@@ -15,10 +13,54 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QWidget" name="centralwidget"/>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 108, 78);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>PINAKA FRONT PAGE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="customerButton">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+      </property>
+      <property name="text">
+       <string>CUSTOMER</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="adminButton">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(250, 240, 202);
+background-color: rgb(195, 132, 107);</string>
+      </property>
+      <property name="text">
+       <string>ADMIN</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

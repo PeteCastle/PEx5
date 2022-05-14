@@ -1,14 +1,15 @@
 <RCC>
-    <qresource prefix="/files">
-        <file>resources/products.csv</file>
+    <qresource prefix="/fonts">
+        <file>fonts/Monaco.ttf</file>
+    </qresource>
+    <qresource prefix="/pictures">
+        <file>pictures/NoThumbnail.jpg</file>
+    </qresource>
+    <qresource prefix="/resources">
         <file>resources/deliverymethods.csv</file>
         <file>resources/paymentmethods.csv</file>
+        <file>resources/products - Copy.csv</file>
+        <file>resources/products.csv</file>
         <file>resources/promocodes.csv</file>
-        <file>resources/Single_grain_of_rice.png</file>
-    </qresource>
-    <qresource prefix="/fonts">
-        <file>fonts/BerkshireSwash-Regular.ttf</file>
-        <file>fonts/LiberationSerif-Regular.ttf</file>
-        <file>fonts/LiberationSerif-Bold.ttf</file>
     </qresource>
 </RCC>

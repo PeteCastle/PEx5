@@ -29,7 +29,8 @@
     <item>
      <widget class="QScrollArea" name="scrollArea">
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(250, 240, 202);</string>
+       <string notr="true">background-color: rgb(250, 240, 202);
+</string>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -40,7 +41,7 @@
          <x>0</x>
          <y>0</y>
          <width>254</width>
-         <height>537</height>
+         <height>538</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2"/>
@@ -52,7 +53,8 @@
       <item>
        <widget class="QTableWidget" name="tableView">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(250, 240, 202);</string>
+         <string notr="true">background-color: rgb(250, 240, 202);
+</string>
         </property>
         <property name="gridStyle">
          <enum>Qt::DashLine</enum>
@@ -61,18 +63,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="CheckoutButton">
-        <property name="font">
-         <font>
-          <family>Berkshire Swash</family>
-          <pointsize>9</pointsize>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(250, 240, 202);
-background-color: rgb(195, 132, 107);
-font: 9pt &quot;Berkshire Swash&quot;;</string>
+background-color: rgb(195, 132, 107);</string>
         </property>
         <property name="text">
          <string>Checkout</string>
@@ -89,7 +82,7 @@ font: 9pt &quot;Berkshire Swash&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>596</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,29 +19,23 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
-      <property name="spacing">
-       <number>0</number>
+     <widget class="QWidget" name="" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250, 240, 202);
+</string>
       </property>
-      <item>
-       <widget class="QLabel" name="Logo">
-        <property name="text">
-         <string>Logo</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="" native="true">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-        </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="25,25,50">
+       <item>
+        <widget class="QLabel" name="Logo">
+         <property name="text">
+          <string>Logo</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QLabel" name="OtherLabel3">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
            <property name="text">
             <string>Restaurant Name</string>
            </property>
@@ -49,303 +43,275 @@ color: rgb(0, 0, 0);</string>
          </item>
          <item>
           <widget class="QLabel" name="OtherLabel4">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
            <property name="text">
             <string>Restaurant Tagline if u want</string>
            </property>
           </widget>
          </item>
         </layout>
-       </widget>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="OtherLabel1">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);
-</string>
-          </property>
-          <property name="text">
-           <string>Your Receipt</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="OtherLabel2">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);
-</string>
-          </property>
-          <property name="text">
-           <string>This receipt becomes official once paid.</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="OtherLabel1">
+           <property name="text">
+            <string>Your Receipt</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="OtherLabel2">
+           <property name="text">
+            <string>This receipt becomes official once paid.</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="75,25">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="OtherLabel5">
-          <property name="text">
-           <string>Your Orders</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QTableWidget" name="tableWidget">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(250, 240, 202);
+     <widget class="QWidget" name="" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250, 240, 202);
 </string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="PaymentMethodLabel">
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>Payment Method</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="PaymentMethod">
-          <property name="font">
-           <font>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(250, 240, 202);
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="75,25">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="OtherLabel5">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Your Orders</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tableWidget"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="PaymentMethodLabel">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Payment Method</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="PaymentMethod">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(250, 240, 202);
 background-color: rgb(195, 132, 107);</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="DeliveryMethodLabel">
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>Dine In / Take Out</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="DeliveryMethod">
-          <property name="font">
-           <font>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(250, 240, 202);
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="DeliveryMethodLabel">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Dine In / Take Out</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="DeliveryMethod">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(250, 240, 202);
 background-color: rgb(195, 132, 107);</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="PromoCodeLabel">
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>Promo Code</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="PromoCode">
-          <property name="font">
-           <font>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="PromoCodeApplyButton">
-          <property name="font">
-           <font>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(250, 240, 202);
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="PromoCodeLabel">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Promo Code</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="PromoCode"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="PromoCodeApplyButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(250, 240, 202);
 background-color: rgb(195, 132, 107);</string>
-          </property>
-          <property name="text">
-           <string>Apply</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
+           </property>
+           <property name="text">
+            <string>Apply</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="75,25">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QLabel" name="AdditionalChargeLabel">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>Additional Charges</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="AdditionalCharge">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="VATLabel">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>VAT</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="VAT">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="DiscountsLabel">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>Discounts</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="Discounts">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QLabel" name="GrandTotalLabel">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>Grand Total:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="GrandTotal">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(250, 240, 202);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QPushButton" name="PlacePrderButton">
-        <property name="font">
-         <font>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(250, 240, 202);
+     <widget class="QWidget" name="" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250, 240, 202);
+</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="75,25">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="AdditionalChargeLabel">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Additional Charges</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="AdditionalCharge">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="VATLabel">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>VAT</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="VAT">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="DiscountsLabel">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Discounts</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Discounts">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="GrandTotalLabel">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Grand Total:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="GrandTotal">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="PlacePrderButton">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(250, 240, 202);
 background-color: rgb(195, 132, 107);</string>
-        </property>
-        <property name="text">
-         <string>Place Order</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+         </property>
+         <property name="text">
+          <string>Place Order</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>

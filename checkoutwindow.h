@@ -2,6 +2,7 @@
 #define CHECKOUTWINDOW_H
 
 #include <QMainWindow>
+#include "viewreceipt.h"
 
 namespace Ui {
 class CheckoutWindow;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::CheckoutWindow *ui;
+    ViewReceipt *viewReceipt;
 
 private slots:
     void computeChargesAndValues();

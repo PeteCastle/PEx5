@@ -25,6 +25,7 @@ private slots:
     void on_CheckoutButton_clicked();
 
 private:
+
     Ui::MainWindow *ui;
     ConfirmAddToCart *confirmAddtoCartWindow;
     CheckoutWindow *checkoutWindow;
