@@ -19,6 +19,8 @@ ConfirmAddToCart::ConfirmAddToCart(QWidget   *parent,QString name, double price,
     ui->Name->setText(name);
     ui->Price->setText(QString::number(price));
 
+
+
     previousWindow = parent;
 
     qDebug() << name << price << supply;
@@ -58,7 +60,6 @@ void ConfirmAddToCart::on_subtractButton_clicked()
         currentPrice-=pricePerAmount;
         ui->Price->setText(QString::number(currentPrice));
     }
-
 }
 
 tuple<QString,double,int> ConfirmAddToCart::getOrderParameters(){
@@ -68,8 +69,6 @@ tuple<QString,double,int> ConfirmAddToCart::getOrderParameters(){
 void ConfirmAddToCart::on_AddToCart_clicked()
 {
     this->close();
-    //std::tuple <char, int, float> toReturn;
-
 }
 
 void ConfirmAddToCart::on_backButton_clicked()

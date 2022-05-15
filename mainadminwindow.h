@@ -6,6 +6,7 @@
 #include "promocodeswindow.h"
 #include "askcredentials.h"
 #include "productswindow.h"
+#include "analytics.h"
 
 namespace Ui {
 class MainAdminWindow;
@@ -34,12 +35,15 @@ private slots:
 
     void on_AddProductButton_clicked();
 
+    void on_AnalyticsButton_clicked();
+
 private:
     Ui::MainAdminWindow *ui;
     InventoryWindow *inventoryWindow;
     PromoCodesWindow *promoCodesWindow;
     AskCredentials *askCredentials;
     ProductsWindow *productsWindow;
+    Analytics *analytics;
 };
 
 #endif // MAINADMINWINDOW_H

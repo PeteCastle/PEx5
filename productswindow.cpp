@@ -49,8 +49,6 @@ void ProductsWindow::updateProductsList(){
     ui->productsList->setModel(standardModel);
     ui->productsList->setIconSize(QSize(50,50));
     ui->productsList->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    //ui->productsList->header()->resizeSection(0,200);
-    //ui->productsList->header()->resizeSection(1,50);
     ui->productsList->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->productsList->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     ui->productsList->header()->setSectionResizeMode(2, QHeaderView::Fixed);

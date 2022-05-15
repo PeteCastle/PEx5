@@ -55,3 +55,11 @@ void MainAdminWindow::on_AddProductButton_clicked()
     productsWindow->show();
 }
 
+
+void MainAdminWindow::on_AnalyticsButton_clicked()
+{
+    Analytics *analytics = new Analytics(this);
+    analytics->setWindowModality(Qt::ApplicationModal);
+    analytics->show();
+}
+

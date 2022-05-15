@@ -15,13 +15,13 @@ class ViewReceipt : public QDialog
 public:
     explicit ViewReceipt(QWidget *parent = nullptr, QString filename = "");
     ~ViewReceipt();
-
+    ReceiptStructure readReceipt(QString filePath);
 
 private:
     Ui::ViewReceipt *ui;
 
 public slots:
-    ReceiptStructure readReceipt(QString filePath);
+
 private slots:
     void on_pushButton_clicked();
 };

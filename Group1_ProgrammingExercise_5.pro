@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
 
@@ -9,7 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    analytics.cpp \
     askcredentials.cpp \
+    calendardialog.cpp \
     checkoutwindow.cpp \
     confirmaddtocart.cpp \
     inventorywindow.cpp \
@@ -19,11 +21,14 @@ SOURCES += \
     mainwindow.cpp \
     productswindow.cpp \
     promocodeswindow.cpp \
+    qcustomplot.cpp \
     viewreceipt.cpp
 
 HEADERS += \
     MenuList.h \
+    analytics.h \
     askcredentials.h \
+    calendardialog.h \
     checkoutwindow.h \
     confirmaddtocart.h \
     inventorywindow.h \
@@ -32,10 +37,13 @@ HEADERS += \
     mainwindow.h \
     productswindow.h \
     promocodeswindow.h \
+    qcustomplot.h \
     viewreceipt.h
 
 FORMS += \
+    analytics.ui \
     askcredentials.ui \
+    calendardialog.ui \
     checkoutwindow.ui \
     confirmaddtocart.ui \
     inventorywindow.ui \

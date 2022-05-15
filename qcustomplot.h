@@ -94,7 +94,7 @@
 #else
 #  include <QtNumeric>
 #  include <QtWidgets/QWidget>
-#  include <QtPrintSupport/QtPrintSupport>
+//#  include <QtPrintSupport/QtPrintSupport>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
 #  include <QtCore/QElapsedTimer>

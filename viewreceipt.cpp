@@ -10,7 +10,6 @@ ViewReceipt::ViewReceipt(QWidget *parent, QString filePath) :
 {
     ui->setupUi(this);
 
-
     //GET BUSINESS INFO
     QString restaurantName = "TEST RESTAURANT";
     QString businessName = "TEST COMPANY";
@@ -78,39 +77,38 @@ ReceiptStructure ViewReceipt::readReceipt(QString filePath){
     QFile readFile(filePath);
 
     if(!readFile.open(QFile::ReadOnly|QFile::Text)){
-        QMessageBox::warning(this,"","TEST");
+        //QMessageBox::warning(this,"File Open Error" ,"File " + filePath + " cannot be opened.");
+        qDebug() << "File " + filePath + " cannot be opened.";
     }
 
     QTextStream input(&readFile);
     while(!input.atEnd()){
-        QStringList receiptDetails = input.readLine().split('\t');
-        qDebug() << receiptDetails;
-        if(receiptDetails[0]=="Transaction ID:"){receipt.transactionID=receiptDetails[1];}
-        else if(receiptDetails[0]=="Transaction Date:"){receipt.transactionDate=QDateTime::fromString(receiptDetails[1],"yyyy-MM-dd");}
-        else if(receiptDetails[0]=="Transaction Time:"){receipt.transactionTime=QDateTime::fromString(receiptDetails[1],"hh-mm-ss");}
-        else if(receiptDetails[0]=="Orders:"){
-            receipt.orderNames.append(receiptDetails[1]);
-            receipt.orderPricePerQuantity.append(receiptDetails[2].toDouble());
-            receipt.orderQuantity.append(receiptDetails[3].toInt());
-            receipt.orderPrice.append(receiptDetails[4].toDouble());
-        }
-        else if(receiptDetails[0]=="Total Number of Items:"){receipt.totalNumberOfItems=receiptDetails[1].toInt();}
-        else if(receiptDetails[0]=="Subtotal:"){receipt.subTotal=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Delivery Charge:"){receipt.deliveryCharge=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Payment Charge:"){receipt.paymentCharge=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Value Added Tax:"){receipt.valueAddedTax=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Discount:"){receipt.discount=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Grand Total:"){receipt.grandTotal=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Paid Amount:"){receipt.paidAmount=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Change:"){receipt.change=receiptDetails[1].toDouble();}
-        else if(receiptDetails[0]=="Cashier:"){receipt.cashier=receiptDetails[1];}
-        else if(receiptDetails[0]=="Payment Method:"){receipt.paymentMethod=receiptDetails[1];}
-        else if(receiptDetails[0]=="Delivery Method:"){receipt.deliveryMethod=receiptDetails[1];}
-        else if(receiptDetails[0]=="Promo Code:"){receipt.promoCode=receiptDetails[1];}
-        else{continue;}
+            QStringList receiptDetails = input.readLine().split('\t');
+            if(receiptDetails[0]=="Transaction ID:"){receipt.transactionID=receiptDetails[1];}
+            else if(receiptDetails[0]=="Transaction Date:"){receipt.transactionDate=QDateTime::fromString(receiptDetails[1],"yyyy-MM-dd");}
+            else if(receiptDetails[0]=="Transaction Time:"){receipt.transactionTime=QDateTime::fromString(receiptDetails[1],"hh-mm-ss");}
+            else if(receiptDetails[0]=="Orders:"){
+                receipt.orderNames.append(receiptDetails[1]);
+                receipt.orderQuantity.append(receiptDetails[2].toInt());
+                receipt.orderPricePerQuantity.append(receiptDetails[3].toDouble());
+                receipt.orderPrice.append(receiptDetails[4].toDouble());
+            }
+            else if(receiptDetails[0]=="Total Number of Items:"){receipt.totalNumberOfItems=receiptDetails[1].toInt();}
+            else if(receiptDetails[0]=="Subtotal:"){receipt.subTotal=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Delivery Charge:"){receipt.deliveryCharge=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Payment Charge:"){receipt.paymentCharge=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Value Added Tax:"){receipt.valueAddedTax=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Discount:"){receipt.discount=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Grand Total:"){receipt.grandTotal=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Paid Amount:"){receipt.paidAmount=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Change:"){receipt.change=receiptDetails[1].toDouble();}
+            else if(receiptDetails[0]=="Cashier:"){receipt.cashier=receiptDetails[1];}
+            else if(receiptDetails[0]=="Payment Method:"){receipt.paymentMethod=receiptDetails[1];}
+            else if(receiptDetails[0]=="Delivery Method:"){receipt.deliveryMethod=receiptDetails[1];}
+            else if(receiptDetails[0]=="Promo Code:"){receipt.promoCode=receiptDetails[1];}
+            else{continue;}
+
     }
-    //qDebug() << receipt.cashier << receipt.change << receipt.deliveryCharge << receipt.deliveryMethod << receipt.cashier
-             //<< receipt.discount << receipt.grandTotal;
     return receipt;
 }
 

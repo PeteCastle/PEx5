@@ -15262,6 +15262,7 @@ bool QCustomPlot::savePdf(const QString &fileName, int width, int height, QCP::E
   printer.printEngine()->setProperty(QPrintEngine::PPK_DocumentName, pdfTitle);*/
   QRect oldViewport = viewport();
   setViewport(QRect(0, 0, newWidth, newHeight));
+  /*
 #if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
   printer.setFullPage(true);
   printer.setPaperSize(viewport().size(), QPrinter::DevicePixel);
@@ -15274,7 +15275,7 @@ bool QCustomPlot::savePdf(const QString &fileName, int width, int height, QCP::E
   //printer.setPageLayout(pageLayout);
 #endif
   QCPPainter printpainter;
-  /*if (printpainter.begin(&printer))
+  if (printpainter.begin(&printer))
   {
     printpainter.setMode(QCPPainter::pmVectorized);
     printpainter.setMode(QCPPainter::pmNoCaching);
