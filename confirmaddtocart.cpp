@@ -2,6 +2,7 @@
 #include "ui_confirmaddtocart.h"
 #include <QMessageBox>
 #include <QListView>
+#include <QDir>
 
 
 int currentSupply,currentAmount=1;
@@ -20,6 +21,13 @@ ConfirmAddToCart::ConfirmAddToCart(QWidget   *parent,QString name, double price,
     ui->Price->setText(QString::number(price));
 
 
+    QDir *dir = new QDir();
+    QString resourcesFileAbsolute = dir->absolutePath();
+    QPixmap pic(resourcesFileAbsolute + "/pictures/" + name + ".png");
+    auto pics = pic.scaled(QSize(400,400),Qt::KeepAspectRatio,Qt::FastTransformation);
+
+    ui->Photo->setPixmap(pics);
+    ui->Photo->setText("");
 
     previousWindow = parent;
 

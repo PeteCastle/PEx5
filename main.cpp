@@ -61,7 +61,6 @@ int main(int argc, char *argv[])
         tempDetails.category = details[2];
         tempDetails.supply = details[3].toInt();
 
-
         MenuList.push_back(tempDetails);
         if(!CategoriesList.contains(details[2])){
             CategoriesList.append(details[2]);

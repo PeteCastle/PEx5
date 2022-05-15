@@ -31,9 +31,11 @@ void ProductsWindow::updateProductsList(){
 
     QStringList headerLabels = {"Product Name", "Price", "Category", "Supply"};
     standardModel->setHorizontalHeaderLabels(headerLabels);
+    QDir *dir = new QDir();
+    QString pictureLocation = dir->absolutePath() ;
 
     for(int i=0; i<tempMenuList.size();i++){
-        QStandardItem *menuIcon = new QStandardItem(QIcon(":/pictures/pictures/NoThumbnail.jpg"),tempMenuList[i].name);
+        QStandardItem *menuIcon = new QStandardItem(QIcon(pictureLocation + + "/pictures/" + tempMenuList[i].name + ".png"),tempMenuList[i].name);
         QStandardItem *menuPrice = new QStandardItem(QString::number(tempMenuList[i].price));
         QStandardItem *menuCategory = new QStandardItem(tempMenuList[i].category);
         QStandardItem *menuSupply = new QStandardItem(QString::number(tempMenuList[i].supply));

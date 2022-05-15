@@ -52,10 +52,16 @@ void InventoryWindow::on_CategoriesList_clicked(const QModelIndex &index)
             QLabel *menuName = new QLabel(menuTemp[i].name);
             menuName->setAlignment(Qt::AlignCenter);
             QLabel *menuPicture = new QLabel("Placeholder Picture");
-            QPixmap picture(":/pictures/pictures/NoThumbnail.jpg"); //Change later to suit menus
-            picture = picture.scaledToWidth(250, Qt::SmoothTransformation);
+
+            QDir *dir = new QDir();
+            QString resourcesFileAbsolute = dir->absolutePath();
+            QPixmap pic(resourcesFileAbsolute + "/pictures/" + menuTemp[i].name + ".png");
+            auto pics = pic.scaled(QSize(250,250),Qt::KeepAspectRatio,Qt::FastTransformation);
+
+            //QPixmap picture(":/pictures/pictures/NoThumbnail.jpg"); //Change later to suit menus
+            //picture = picture.scaledToWidth(250, Qt::SmoothTransformation);
             menuPicture->setAlignment(Qt::AlignCenter);
-            menuPicture->setPixmap(picture);
+            menuPicture->setPixmap(pics);
 
             QSpacerItem *spacer = new QSpacerItem(0,0,QSizePolicy::Fixed,QSizePolicy::Expanding);
             subMenuLayout->addItem(spacer);

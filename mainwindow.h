@@ -20,9 +20,10 @@ public:
 private slots:
     void on_listView_clicked(const QModelIndex &index);
     void confirmAddtoCart(QString parameters);
-
-
+    void updateCartMenu();
     void on_CheckoutButton_clicked();
+
+    void on_pushButton_clicked();
 
 private:
 

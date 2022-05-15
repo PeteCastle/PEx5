@@ -1,43 +1,43 @@
-Plain Rice,47,100,Rice
-Garlic Rice,50,100,Rice
-Crab Rice,255,100,Rice
-Binagoongan Rice,275,100,Rice
-Seafood Rice,265,100,Rice
-Fried Chicken,325,100,Chicken
-Chicken Kebab,275,100,Chicken
-Sizzling Garlic Chicken,335,100,Chicken
-Spicy Garlic Fried Chicken,325,100,Chicken
-Sizzling Sisig,285,100,Pork
-Sisig Kilaw,395,100,Pork
-Pork BBQ,215,100,Pork
-Crispy Pata (Regular),645,100,Pork
-Crispy Pata (Family),815,100,Pork
-Lechon Kawali,395,100,Pork
-Inihaw na Liempo,355,100,Pork
-Stuffed Laing,275,100,Pork
-Beef Kare-Kare,535,100,Beef
-Prime Beef Kaldereta,455,100,Beef
-Inihaw na Bangus,355,100,Seafood
-Inihaw na Pusit,495,100,Seafood
-Inihaw na Baby Pusit,445,100,Seafood
-Sizzling Gambas,355,100,Seafood
-Inihaw na Tuna Belly,375,100,Seafood
-Bangus ala Pobre,365,100,Seafood
-Blue Marlin Steak,465,100,Seafood
-Blue Marlin Belly,485,100,Seafood
-Blue Marlin Ribs,375,100,Seafood
-Tuna Kilaw,365,100,Seafood
-Sugba Kilaw,415,100,Seafood
-Sinigang na Boneless Bangus,375,100,Soups
-Sinigang na Hipon,385,100,Soups
-Sinigang na Baboy,385,100,Soups
-Nilagang Bulalo,445,100,Soups
-Halo-Halo,135,100,Desserts
-Leche Flan,115,100,Desserts
-Buko Pandan,115,100,Desserts
-Sago't Gulaman,65,100,Drinks
-Mango Juice,80,100,Drinks
-Ice Tea Pitcher,95,100,Drinks
-Banana Shake,105,100,Drinks
-Pepsi,79,100,Drinks
-Bottled Water,55,100,Drinks
+Plain Rice,47,Rice,100
+Garlic Rice,50,Rice,100
+Crab Rice,255,Rice,100
+Binagoongan Rice,275,Rice,100
+Seafood Rice,265,Rice,100
+Fried Chicken,325,Chicken,100
+Chicken Kebab,275,Chicken,100
+Sizzling Garlic Chicken,335,Chicken,100
+Spicy Garlic Fried Chicken,325,Chicken,100
+Sizzling Sisig,285,Pork,100
+Sisig Kilaw,395,Pork,100
+Pork BBQ,215,Pork,100
+Crispy Pata (Regular),645,Pork,100
+Crispy Pata (Family),815,Pork,100
+Lechon Kawali,395,Pork,100
+Inihaw na Liempo,355,Pork,100
+Stuffed Laing,275,Pork,100
+Beef Kare-Kare,535,Beef,103
+Prime Beef Kaldereta,455,Beef,100
+Inihaw na Bangus,355,Seafood,100
+Inihaw na Pusit,495,Seafood,100
+Inihaw na Baby Pusit,445,Seafood,100
+Sizzling Gambas,355,Seafood,100
+Inihaw na Tuna Belly,375,Seafood,100
+Bangus ala Pobre,365,Seafood,100
+Blue Marlin Steak,465,Seafood,100
+Blue Marlin Belly,485,Seafood,100
+Blue Marlin Ribs,375,Seafood,100
+Tuna Kilaw,365,Seafood,100
+Sugba Kilaw,415,Seafood,100
+Sinigang na Boneless Bangus,375,Soups,100
+Sinigang na Hipon,385,Soups,100
+Sinigang na Baboy,385,Soups,100
+Nilagang Bulalo,445,Soups,100
+Halo-Halo,135,Desserts,100
+Leche Flan,115,Desserts,100
+Buko Pandan,115,Desserts,100
+Sago't Gulaman,65,Drinks,100
+Mango Juice,80,Drinks,100
+Ice Tea Pitcher,95,Drinks,100
+Banana Shake,105,Drinks,100
+Pepsi,79,Drinks,100
+Bottled Water,55,Drinks,100

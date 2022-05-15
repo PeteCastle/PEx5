@@ -42,7 +42,6 @@ void MainAdminWindow::on_ModifyPromoCodesButton_clicked()
 
 void MainAdminWindow::on_ChangePasswordButton_clicked()
 {
-    bool yes;
     AskCredentials *askCredentials = new AskCredentials(this,2);
     askCredentials->show();
     askCredentials->setWindowModality(Qt::ApplicationModal);

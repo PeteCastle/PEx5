@@ -36,6 +36,7 @@ CheckoutWindow::CheckoutWindow(QWidget *parent) :
 
     ui->tableWidget->setRowCount(CurrentOrders.size()+1);
     ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     for(int i=0; i<CurrentOrders.size();i++){
 
 

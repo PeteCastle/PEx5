@@ -148,7 +148,11 @@ void Analytics::on_UpdateButton_clicked()
     QStringList headerLabels = {"Product", "Amount", "Total Sales"};
     standardModel->setHorizontalHeaderLabels(headerLabels);
     for(int i=0; i<productStatistics.size();i++){
-        QStandardItem *productName = new QStandardItem(QIcon(":/pictures/pictures/NoThumbnail.jpg"), QString::number(i) + " - " + productStatistics[i].name);
+
+        QDir *dir = new QDir();
+        QString resourcesFileAbsolute = dir->absolutePath();
+
+        QStandardItem *productName = new QStandardItem(QIcon(resourcesFileAbsolute + "/pictures/" + productStatistics[i].name + ".png"), QString::number(i) + " - " + productStatistics[i].name);
         QStandardItem *productAmountSold = new QStandardItem(QString::number(productStatistics[i].amountSold));
         QStandardItem *productTotalSales = new QStandardItem(QString::number(productStatistics[i].sale));
         productAmountSold->setTextAlignment(Qt::AlignCenter);
@@ -207,6 +211,9 @@ void Analytics::on_UpdateButton_clicked()
         maxX++;
     }
 
+    //This shall be uncommented in final version
+    /*
+
     QCPBars *salesGraph = new QCPBars(ui->Graph->xAxis,ui->Graph->yAxis);
     //salesGraph->setName("Test");
     salesGraph->setData(xAxis,yAxis);
@@ -226,7 +233,11 @@ void Analytics::on_UpdateButton_clicked()
 
     //ui->Graph->addGraph(ui->Graph->yAxis,ui->Graph->xAxis);
 
+
+
     ui->Graph->replot();
+
+    */
 }
 
 

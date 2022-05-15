@@ -18,12 +18,12 @@ void LandingPage::on_customerButton_clicked()
 {
     MainWindow *customerWindow = new MainWindow(this);
     customerWindow->show();
-    this->hide();
+    customerWindow->setWindowModality(Qt::ApplicationModal);
 }
 
 
 void LandingPage::on_adminButton_clicked(){
-    /*
+
     AskCredentials *askCredentials = new AskCredentials(this,1);
     askCredentials->setWindowModality(Qt::ApplicationModal);
     askCredentials->exec();
@@ -31,10 +31,10 @@ void LandingPage::on_adminButton_clicked(){
     bool test = askCredentials->getResult();
     qDebug() << test;
 
-    if(test){*/
+    if(test){
         MainAdminWindow *adminWindow = new MainAdminWindow(this);
         adminWindow->show();
-        this->hide();
-    //}
+        adminWindow->setWindowModality(Qt::ApplicationModal);
+    }
 }
 
