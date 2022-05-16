@@ -17,37 +17,168 @@
    <string notr="true">background-color: rgb(212, 108, 78);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"> QScrollBar:vertical {
+	border: none;
+	background: rgb(249, 204, 158);
+    width: 14px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+ }
+
+/*  HANDLE BAR VERTICAL */
+QScrollBar::handle:vertical {	
+	background-color: rgb(255, 129, 94);
+	min-height: 30px;
+	border-radius: 7px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: rgb(221, 154, 109);
+}
+QScrollBar::handle:vertical:pressed {	
+	background-color: rgb(212, 108, 78);
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:vertical {
+	border: none;
+	background-color: rgb(89, 52, 27);
+	height: 15px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {	
+	background-color: rgb(197, 114, 59);
+}
+QScrollBar::sub-line:vertical:pressed {	
+	background-color: rgb(49, 28, 15);
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:vertical {
+	border: none;
+	background-color: rgb(89, 52, 27);
+	height: 15px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {	
+	background-color: rgb(197, 114, 59);
+}
+QScrollBar::add-line:vertical:pressed {	
+	background-color: rgb(49, 28, 15);
+}
+
+
+QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="25,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLabel" name="OtherLabel3">
-          <property name="font">
-           <font>
-            <family>Vineta BT</family>
-            <pointsize>16</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(208, 208, 208);</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Tom's Grill&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="indent">
-           <number>60</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
-      <item>
-       <widget class="QWidget" name="" native="true">
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="Logo">
         <property name="minimumSize">
          <size>
-          <width>336</width>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/logo/pictures/logo 4.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignLeft">
+       <widget class="QLabel" name="OtherLabel3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Amsterdam Lentteria</family>
+          <pointsize>24</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(250, 240, 202);
+font: 24pt 'Amsterdam Lentteria';</string>
+        </property>
+        <property name="text">
+         <string>Tom's Grill</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="indent">
+         <number>60</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
           <height>0</height>
          </size>
         </property>
@@ -64,11 +195,17 @@ border-radius: 10px
 </string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="OtherLabel1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
-             <pointsize>11</pointsize>
+             <pointsize>18</pointsize>
              <bold>true</bold>
             </font>
            </property>
@@ -76,24 +213,7 @@ border-radius: 10px
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Your Receipt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="OtherLabel2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <italic>true</italic>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;This receipt becomes official once paid.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>Checkout</string>
            </property>
           </widget>
          </item>
@@ -103,10 +223,10 @@ border-radius: 10px
      </layout>
     </item>
     <item>
-     <widget class="QWidget" name="" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="60,40">
        <item>
-        <widget class="QGroupBox" name="">
+        <widget class="QGroupBox" name="groupBox">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(250, 240, 202);
@@ -126,17 +246,43 @@ border-radius: 10px
              <string notr="true">color: rgb(0, 0, 0);</string>
             </property>
             <property name="text">
-             <string>Your Orders</string>
+             <string>Your Cart</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QTableWidget" name="tableWidget">
+           <widget class="QTreeView" name="treeView">
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
+             <string notr="true">
+
+QTreeView{
 background-color: rgb(249, 204, 158);
-border-radius: 10px
-</string>
+color: rgb(0, 0, 0);
+border-radius: 10px;
+font:  12px 'Georgia';
+}
+
+QTreeView::item{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	padding:5px;
+}
+QTreeView::item:hover {
+	background-color: rgb(250, 240, 202);
+}
+
+QTreeView::item:selected {
+	background-color: rgb(89, 52, 27);
+
+	color: rgb(250, 240, 202);
+	font-weight:bold;
+}
+
+QHeaderView::section{
+	background-color: rgb(249, 204, 158);
+	border: 1px solid rgb(250, 240, 202);
+	font: 14px 'Georgia';
+}</string>
             </property>
            </widget>
           </item>
@@ -144,7 +290,7 @@ border-radius: 10px
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="" native="true">
+        <widget class="QWidget" name="widget" native="true">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(250, 240, 202);
@@ -152,32 +298,42 @@ border-radius: 10px
 </string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLabel" name="Logo">
-            <property name="minimumSize">
-             <size>
-              <width>250</width>
-              <height>200</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>350</width>
-              <height>300</height>
-             </size>
+          <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+           <widget class="QLabel" name="OrderDetailsLabel">
+            <property name="font">
+             <font>
+              <family>Amsterdam Traveling</family>
+              <pointsize>18</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">image: url(:/logo/pictures/logo 4.png);</string>
+             <string notr="true">font: 18pt 'Amsterdam Traveling';</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Order Details</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QLabel" name="PaymentMethodLabel">
             <property name="font">
              <font>
+              <family>Georgia</family>
               <pointsize>11</pointsize>
               <bold>true</bold>
              </font>
@@ -193,8 +349,24 @@ border-radius: 10px
           <item>
            <widget class="QComboBox" name="PaymentMethod">
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);
+             <string notr="true">QComboBox{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+QComboBox::drop-down 
+{
+    border: 0px;
+}
+QComboBox::down-arrow{
+	image: url(:/pictures/pictures/211614_down_b_arrow_icon.png);
+	width: 14px;
+	height: 14px;
+	padding-right: 5px;
+
+}
 
 </string>
             </property>
@@ -204,6 +376,7 @@ background-color: rgb(249, 204, 158);
            <widget class="QLabel" name="DeliveryMethodLabel">
             <property name="font">
              <font>
+              <family>Georgia</family>
               <pointsize>11</pointsize>
               <bold>true</bold>
              </font>
@@ -219,17 +392,33 @@ background-color: rgb(249, 204, 158);
           <item>
            <widget class="QComboBox" name="DeliveryMethod">
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);
+             <string notr="true">QComboBox{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+QComboBox::drop-down 
+{
+    border: 0px;
+}
+QComboBox::down-arrow{
+	image: url(:/pictures/pictures/211614_down_b_arrow_icon.png);
+	width: 14px;
+	height: 14px;
+	padding-right: 5px;
 
+}
 </string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="PromoCodeLabel">
+           <widget class="QLabel" name="PaymentAmountLabel">
             <property name="font">
              <font>
+              <family>Georgia</family>
               <pointsize>11</pointsize>
               <bold>true</bold>
              </font>
@@ -238,15 +427,72 @@ background-color: rgb(249, 204, 158);
              <string notr="true">color: rgb(0, 0, 0);</string>
             </property>
             <property name="text">
-             <string>Promo Code</string>
+             <string>Payment Amount (in Php)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="PaymentAmount">
+            <property name="styleSheet">
+             <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+
+</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>10</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="PromoCodeLabel">
+            <property name="font">
+             <font>
+              <family>Georgia</family>
+              <pointsize>11</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>Promo Code (optional)</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="PromoCode">
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);
+             <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
 
 </string>
             </property>
@@ -262,14 +508,35 @@ background-color: rgb(249, 204, 158);
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(249, 204, 158);
-color: rgb(89, 52, 27);
-border-radius: 10px;</string>
+             <string notr="true">QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 3px;
+}
+QPushButton::hover{
+	border: 1px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 1px solid rgb(89, 52, 27);
+}</string>
             </property>
             <property name="text">
              <string>Apply</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -278,9 +545,9 @@ border-radius: 10px;</string>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,25">
+     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="60,40">
       <item>
-       <widget class="QWidget" name="" native="true">
+       <widget class="QWidget" name="widget" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -293,29 +560,23 @@ background-color: rgb(250, 240, 202);
 border-radius: 10px
 </string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="AdditionalChargeLabel">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>Additional Charges</string>
-             </property>
-            </widget>
-           </item>
-           <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>0</number>
+           </property>
+           <item row="1" column="1" alignment="Qt::AlignLeft">
             <widget class="QLabel" name="AdditionalCharge">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>false</bold>
               </font>
@@ -328,10 +589,11 @@ border-radius: 10px
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="QLabel" name="VATLabel">
+           <item row="1" column="0" alignment="Qt::AlignRight">
+            <widget class="QLabel" name="AdditionalChargeLabel">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>true</bold>
               </font>
@@ -340,14 +602,15 @@ border-radius: 10px
               <string notr="true">color: rgb(0, 0, 0);</string>
              </property>
              <property name="text">
-              <string>VAT</string>
+              <string>Additional Charges</string>
              </property>
             </widget>
            </item>
-           <item>
+           <item row="2" column="1" alignment="Qt::AlignLeft">
             <widget class="QLabel" name="VAT">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>false</bold>
               </font>
@@ -360,10 +623,28 @@ border-radius: 10px
              </property>
             </widget>
            </item>
-           <item>
+           <item row="2" column="0" alignment="Qt::AlignRight">
+            <widget class="QLabel" name="VATLabel">
+             <property name="font">
+              <font>
+               <family>Georgia</family>
+               <pointsize>11</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>VAT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" alignment="Qt::AlignRight">
             <widget class="QLabel" name="DiscountsLabel">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>true</bold>
               </font>
@@ -376,10 +657,11 @@ border-radius: 10px
              </property>
             </widget>
            </item>
-           <item>
+           <item row="3" column="1" alignment="Qt::AlignLeft">
             <widget class="QLabel" name="Discounts">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>false</bold>
               </font>
@@ -395,11 +677,12 @@ border-radius: 10px
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="GrandTotalLabel">
              <property name="font">
               <font>
+               <family>Georgia</family>
                <pointsize>11</pointsize>
                <bold>true</bold>
               </font>
@@ -412,11 +695,12 @@ border-radius: 10px
              </property>
             </widget>
            </item>
-           <item>
+           <item alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="GrandTotal">
              <property name="font">
               <font>
-               <pointsize>11</pointsize>
+               <family>Georgia</family>
+               <pointsize>20</pointsize>
                <bold>false</bold>
               </font>
              </property>
@@ -450,17 +734,18 @@ border-radius: 10px
         <property name="font">
          <font>
           <family>Georgia</family>
-          <pointsize>11</pointsize>
+          <pointsize>20</pointsize>
           <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 10px;</string>
+border-radius: 10px;
+padding: 0px 15px 0px 15px;</string>
         </property>
         <property name="text">
-         <string>Place Order</string>
+         <string>Place Order </string>
         </property>
        </widget>
       </item>

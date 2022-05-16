@@ -9,6 +9,8 @@
 #include <QSysInfo>
 #include <QDir>
 #include <QTextStream>
+#include <QStandardItemModel>
+#include "inventorywindow.h"
 
 
 QStringList PromoCodesName;
@@ -34,29 +36,43 @@ CheckoutWindow::CheckoutWindow(QWidget *parent) :
         ui->DeliveryMethod->addItem(DeliveryList[i].deliveryName);
     }
 
-    ui->tableWidget->setRowCount(CurrentOrders.size()+1);
-    ui->tableWidget->setColumnCount(3);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    for(int i=0; i<CurrentOrders.size();i++){
 
 
-        QTableWidgetItem *newItemName = new QTableWidgetItem();
-        newItemName->setText(get<0>(CurrentOrders[i]));
-        ui->tableWidget->setItem(i, 0, newItemName);
+    QStandardItemModel *standardModel = new QStandardItemModel(this);
+    standardModel->setColumnCount(3);
+    QStringList headerLabels = {"Item", "Amount", "Subtotal"};
+    standardModel->setHorizontalHeaderLabels(headerLabels);
 
-        QTableWidgetItem *newItemQuantity = new QTableWidgetItem(QString::number(get<1>(CurrentOrders[i])));
-        ui->tableWidget->setItem(i, 2, newItemQuantity);
+    int i;
+    for(i=0; i<CurrentOrders.size();i++){
 
-        QTableWidgetItem *newItemPrice = new QTableWidgetItem(QString::number(get<2>(CurrentOrders[i])));
-        ui->tableWidget->setItem(i, 1, newItemPrice);
+        QDir *dir = new QDir();
+        QString resourcesFileAbsolute = dir->absolutePath();
+
+        QStandardItem *productName = new QStandardItem(QIcon(resourcesFileAbsolute + "/pictures/" + get<0>(CurrentOrders[i]) + ".png"), get<0>(CurrentOrders[i]));
+        QStandardItem *productAmountSold = new QStandardItem(QString::number(get<2>(CurrentOrders[i])));
+        QStandardItem *productTotalSales = new QStandardItem(QString::number(get<1>(CurrentOrders[i])));
+        productAmountSold->setTextAlignment(Qt::AlignCenter);
+
+        standardModel->setItem(i,0,productName);
+        standardModel->setItem(i,1,productAmountSold);
+        standardModel->setItem(i,2,productTotalSales);
 
         baseTotal+=get<1>(CurrentOrders[i]);
-
     }
-    QTableWidgetItem *subTotalLabel = new QTableWidgetItem("SUBTOTAL:");
-    ui->tableWidget->setItem(CurrentOrders.size(), 1, subTotalLabel);
-    QTableWidgetItem *subTotal = new QTableWidgetItem(QString::number(baseTotal));
-    ui->tableWidget->setItem(CurrentOrders.size(), 2, subTotal);
+    standardModel->setItem(i,0,new QStandardItem("SUBTOTAL:"));
+    standardModel->setItem(i,1,new QStandardItem(QString::number(baseTotal)));
+
+
+    ui->treeView->setModel(standardModel);
+    ui->treeView->setIconSize(QSize(20,20));
+    ui->treeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->treeView->header()->setDefaultAlignment(Qt::AlignCenter);
+    ui->treeView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui->treeView->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui->treeView->header()->setSectionResizeMode(2, QHeaderView::Stretch);
+    ui->treeView->header()->setStretchLastSection(false);
+    ui->treeView->setIndentation(0);
 
     valueAddedTax=baseTotal*0.12;
     computeChargesAndValues();
@@ -80,8 +96,16 @@ CheckoutWindow::~CheckoutWindow()
 
 void CheckoutWindow::on_PaymentMethod_currentIndexChanged(int index)
 {
+    if(PaymentsList[index].paymentTypeName!="Cash"){
+        ui->PaymentAmount->setVisible(false);
+        ui->PaymentAmountLabel->setVisible(false);
+    }else{
+        ui->PaymentAmount->setVisible(true);
+        ui->PaymentAmountLabel->setVisible(true);
+    }
     paymentCharge=baseTotal*(PaymentsList[index].paymentTypeCharge/100);
     computeChargesAndValues();
+
 }
 
 
@@ -117,10 +141,28 @@ void CheckoutWindow::on_PromoCodeApplyButton_clicked()
 
 void CheckoutWindow::on_PlacePrderButton_clicked()
 {
+    if(ui->PaymentMethod->currentText()=="Cash"){
+        QString paymentAmountString = ui->PaymentAmount->text();
+        if(paymentAmountString==""){
+            QMessageBox::warning(nullptr, "Payment Amount Needed", "For cash payments, payment amount shall be provided during checkout.");
+            return;
+        }
+        for(int i=0; i<paymentAmountString.size();i++){
+            if(paymentAmountString[i].isLetter()){
+                QMessageBox::warning(nullptr,"Error", "Invalid price amount.  Please enter numbers and/or decimals only.");
+                return;
+            }
+        }
+        double paymentAmount = paymentAmountString.toDouble();
+        if(paymentAmount < grandTotal){
+            QMessageBox::warning(nullptr,"Error", "Payment amount must be greater than total price.");
+            return;
+        }
+    }
     QString receipt = generateReceipt();
     QMessageBox orderSuccessful;
     orderSuccessful.setText("Your order is successful");
-    orderSuccessful.setInformativeText("Thank you for buying at <restaurantname>. A recipe has been generated for your convenience.  You may opt to view the recipe or enter a new order.");
+    orderSuccessful.setInformativeText("Thank you for buying at Tom's Grill. A receipt has been generated for your convenience.  You may opt to view the receipt or enter a new order.");
     orderSuccessful.setWindowTitle("Order Success");
 
 
@@ -132,14 +174,14 @@ void CheckoutWindow::on_PlacePrderButton_clicked()
 
     if(orderSuccessful.clickedButton()==viewReceiptButton){
         ViewReceipt *viewReceipt = new ViewReceipt(this, receipt);
-        viewReceipt->setWindowTitle("Recipe");
+        viewReceipt->setWindowTitle("Receipt");
         viewReceipt->exec();
     }
+
+    updateInventoryCount();
     CurrentOrders.clear();
     this->close();
     previous->close();
-
-
 }
 
 QString CheckoutWindow::generateReceipt(){
@@ -192,8 +234,14 @@ QString CheckoutWindow::generateReceipt(){
     output << "Value Added Tax:\t" << valueAddedTax<< "\n";
     output << "Discount:\t" << discount << "\n";
     output << "Grand Total:\t" << grandTotal << "\n";
-    output << "Paid Amount:\t" << 0 << "\n";
-    output << "Change:\t" << 0 << "\n";
+    if(ui->PaymentMethod->currentText()=="Cash"){
+        output << "Paid Amount:\t" << ui->PaymentAmount->text().toDouble() << "\n";
+        output << "Change:\t" << ui->PaymentAmount->text().toDouble()-grandTotal << "\n";
+    }
+    else{
+        output << "Paid Amount:\t" << grandTotal << "\n";
+        output << "Change:\t" << 0 << "\n";
+    }
     output << "Cashier:\t" << hostName << "\n";
     output << "Payment Method:\t" << ui->PaymentMethod->currentText() <<"\n";
     output << "Delivery Method:\t" << ui->DeliveryMethod->currentText()<< "\n";
@@ -203,7 +251,16 @@ QString CheckoutWindow::generateReceipt(){
     logFile.close();
 
     return logFileName;
+}
 
+void CheckoutWindow::updateInventoryCount(){
+    for(int i=0; i<CurrentOrders.size();i++){
+        QString orderName = get<0>(CurrentOrders[i]);
+        auto promoCodeIndex = std::find_if(MenuList.begin(),MenuList.end(),[&orderName](MenuDetails & m){ return m.name == orderName; });
+        promoCodeIndex->supply -= get<2>(CurrentOrders[i]);
+    }
+    InventoryWindow inventoryWindow;
+    inventoryWindow.saveSuppliesToFile();
 }
 
 QString CheckoutWindow::generateTransactionCode(const int len) {

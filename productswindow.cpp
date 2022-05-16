@@ -128,8 +128,9 @@ void ProductsWindow::on_AddImageButton_clicked()
 
     if(fileNamePath!=""){
         QPixmap image(fileNamePath);
-        QPixmap imageScaled = image.scaled(200,200,Qt::KeepAspectRatio,Qt::FastTransformation);
+        QPixmap imageScaled = image.scaled(300,300,Qt::KeepAspectRatio,Qt::FastTransformation);
         ui->MenuPicture->setPixmap(imageScaled);
+        ui->MenuPicture->setAlignment(Qt::AlignCenter);
         ui->MenuFilePath->setText(fileNamePath.section("/",-1,-1));
     }
 }

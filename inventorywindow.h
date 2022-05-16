@@ -27,6 +27,7 @@ class InventoryWindow : public QMainWindow
 public:
     explicit InventoryWindow(QWidget *parent = nullptr, int mode=0); //MODE 0 -> VIEW  //MODE 1 -> MODIFY
     ~InventoryWindow();
+    void saveSuppliesToFile();
 
 private slots:
     void on_CategoriesList_clicked(const QModelIndex &index);

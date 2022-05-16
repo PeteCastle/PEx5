@@ -58,45 +58,135 @@ background-color: rgb(250, 240, 202);</string>
       <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
       </property>
-      <widget class="QWidget" name="widget" native="true">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>500</y>
-         <width>811</width>
-         <height>82</height>
-        </rect>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>12</number>
        </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
+       <property name="topMargin">
+        <number>12</number>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="adminButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>200</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Stencil</family>
-            <pointsize>20</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/logo/pictures/cover photo.png);</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2"/>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,40,60">
+          <item>
+           <widget class="QPushButton" name="aboutUsButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	background-color: rgb(249, 230, 153);
+color: rgb(89, 52, 27);
+border-radius: 10px;
+font: 10px 'Stencil';
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+            </property>
+            <property name="text">
+             <string>About Us</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="adminButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Stencil</family>
+              <pointsize>20</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QPushButton{
+	background-color: rgb(249, 230, 153);
+color: rgb(89, 52, 27);
+border-radius: 10px
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+            </property>
+            <property name="text">
+             <string>ADMIN</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="customerButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Stencil</family>
+              <pointsize>20</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
 
 QPushButton{
 	background-color: rgb(249, 230, 153);
@@ -109,90 +199,16 @@ QPushButton::hover{
 QPushButton::pressed{
 	border: 5px solid rgb(89, 52, 27);
 }</string>
-          </property>
-          <property name="text">
-           <string>ADMIN</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="customerButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>60</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>200</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Stencil</family>
-            <pointsize>20</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">
-
-QPushButton{
-	background-color: rgb(249, 230, 153);
-color: rgb(89, 52, 27);
-border-radius: 10px
-}
-QPushButton::hover{
-	border: 5px solid rgb(138, 80, 42);
-}
-QPushButton::pressed{
-	border: 5px solid rgb(89, 52, 27);
-}</string>
-          </property>
-          <property name="text">
-           <string>CUSTOMER</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>791</width>
-         <height>481</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(249, 204, 158);
-border-radius: 10px</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Panel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
+            </property>
+            <property name="text">
+             <string>CUSTOMER</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>

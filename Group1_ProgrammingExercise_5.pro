@@ -21,6 +21,7 @@ SOURCES += \
     mainwindow.cpp \
     productswindow.cpp \
     promocodeswindow.cpp \
+    qcustomplot.cpp \
     viewreceipt.cpp
 
 HEADERS += \
@@ -36,6 +37,7 @@ HEADERS += \
     mainwindow.h \
     productswindow.h \
     promocodeswindow.h \
+    qcustomplot.h \
     viewreceipt.h
 
 FORMS += \

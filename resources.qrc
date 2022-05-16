@@ -6,11 +6,15 @@
     </qresource>
     <qresource prefix="/pictures">
         <file>pictures/NoThumbnail.jpg</file>
+        <file>pictures/211614_down_b_arrow_icon.png</file>
+        <file>pictures/697342_plus_512x512.png</file>
+        <file>pictures/minus icon.png</file>
     </qresource>
     <qresource prefix="/logo">
         <file>pictures/logo 4.png</file>
         <file>pictures/logo 1.png</file>
         <file>pictures/logo 2.png</file>
         <file>pictures/logo 3.png</file>
+        <file>pictures/cover photo.png</file>
     </qresource>
 </RCC>

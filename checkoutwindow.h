@@ -27,6 +27,7 @@ private slots:
     void on_PromoCodeApplyButton_clicked();
     void on_PlacePrderButton_clicked();
     QString generateReceipt();
+    void updateInventoryCount();
 
 public slots:
     QString generateTransactionCode(const int len=12);

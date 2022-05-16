@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QStringListModel>
 
 vector<struct PromoCodes> TempPromosList;
 
@@ -26,23 +27,33 @@ PromoCodesWindow::~PromoCodesWindow()
 void PromoCodesWindow::on_RemovePromoCodeButton_clicked()
 {
     if(ui->PromoCodesList->model()->rowCount()!=0){
-        int index = ui->PromoCodesList->currentRow();
+        int index = ui->PromoCodesList->currentIndex().row();
         TempPromosList.erase(TempPromosList.begin()+index);
         updateTempPromoCodes();
     }
 }
 void PromoCodesWindow::updateTempPromoCodes(){
-    ui->PromoCodesList->clear();
+
+
+
+
+    QStringList promosList;
+
     for(int i=0; i<TempPromosList.size();i++){
         if (TempPromosList[i].discountType==1){
-            ui->PromoCodesList->addItem(TempPromosList[i].promoName + " (Php " + QString::number(TempPromosList[i].discountQuantity) + ")");
+            promosList.append(TempPromosList[i].promoName + " (Php " + QString::number(TempPromosList[i].discountQuantity));
+            //model->insertRow(i, new QModelIndex())
+            //ui->PromoCodesList->addItem(TempPromosList[i].promoName + " (Php " + QString::number(TempPromosList[i].discountQuantity) + ")");
         }
         else if(TempPromosList[i].discountType==2){
-            ui->PromoCodesList->addItem(TempPromosList[i].promoName + " (" + QString::number(TempPromosList[i].discountQuantity) + "%)");
+            promosList.append(TempPromosList[i].promoName + " (" + QString::number(TempPromosList[i].discountQuantity) + "%)");
+            //ui->PromoCodesList->addItem(TempPromosList[i].promoName + " (" + QString::number(TempPromosList[i].discountQuantity) + "%)");
         }
+        qDebug() << promosList;
     }
+    //ui->PromoCodesList->model()->removeRows(0,ui->PromoCodesList->model()->rowCount());
+    ui->PromoCodesList->setModel(new QStringListModel(promosList));
 }
-
 
 void PromoCodesWindow::on_SaveAndCloseButton_clicked()
 {

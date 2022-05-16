@@ -7,6 +7,8 @@ LandingPage::LandingPage(QWidget *parent) :
     ui(new Ui::LandingPage)
 {
     ui->setupUi(this);
+
+
 }
 
 LandingPage::~LandingPage()
@@ -26,7 +28,6 @@ void LandingPage::on_adminButton_clicked(){
 
     AskCredentials *askCredentials = new AskCredentials(this,1);
     askCredentials->setWindowModality(Qt::ApplicationModal);
-    askCredentials-
     askCredentials->exec();
 
     bool loginSuccess = askCredentials->getResult();
@@ -36,5 +37,11 @@ void LandingPage::on_adminButton_clicked(){
         adminWindow->show();
         adminWindow->setWindowModality(Qt::ApplicationModal);
     }
+}
+
+
+void LandingPage::on_aboutUsButton_clicked()
+{
+
 }
 

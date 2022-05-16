@@ -11,8 +11,8 @@ ViewReceipt::ViewReceipt(QWidget *parent, QString filePath) :
     ui->setupUi(this);
 
     //GET BUSINESS INFO
-    QString restaurantName = "TEST RESTAURANT";
-    QString businessName = "TEST COMPANY";
+    QString restaurantName = "Tom's Grill";
+    QString businessName = "Singko Inc.";
 
     ReceiptStructure receipt = readReceipt(filePath);
     ui->RestaurantName->setText(restaurantName);

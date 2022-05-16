@@ -23,6 +23,8 @@ private slots:
 
     void on_adminButton_clicked();
 
+    void on_aboutUsButton_clicked();
+
 private:
     Ui::LandingPage *ui;
     MainWindow *customerWindow;

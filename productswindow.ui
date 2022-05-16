@@ -17,6 +17,75 @@
    <string notr="true">background-color: rgb(212, 108, 78);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"> QScrollBar:vertical {
+	border: none;
+	background: rgb(249, 204, 158);
+    width: 14px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+ }
+
+/*  HANDLE BAR VERTICAL */
+QScrollBar::handle:vertical {	
+	background-color: rgb(255, 129, 94);
+	min-height: 30px;
+	border-radius: 7px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: rgb(221, 154, 109);
+}
+QScrollBar::handle:vertical:pressed {	
+	background-color: rgb(212, 108, 78);
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:vertical {
+	border: none;
+	background-color: rgb(89, 52, 27);
+	height: 15px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {	
+	background-color: rgb(197, 114, 59);
+}
+QScrollBar::sub-line:vertical:pressed {	
+	background-color: rgb(49, 28, 15);
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:vertical {
+	border: none;
+	background-color: rgb(89, 52, 27);
+	height: 15px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {	
+	background-color: rgb(197, 114, 59);
+}
+QScrollBar::add-line:vertical:pressed {	
+	background-color: rgb(49, 28, 15);
+}
+
+
+QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout"/>
@@ -41,7 +110,7 @@ border-radius: 10px
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="60,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="60,40">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <property name="leftMargin">
@@ -51,69 +120,129 @@ border-radius: 10px
          <widget class="QTreeView" name="productsList">
           <property name="styleSheet">
            <string notr="true">
-background-color: rgb(250, 240, 202);</string>
+QTreeView{
+background-color: rgb(250, 240, 202);
+border-radius: 10px;
+font:  12px 'Georgia';
+}
+
+QTreeView::item{
+	background-color: rgb(250, 240, 202);
+	color: rgb(89, 52, 27);
+	padding:5px;
+}
+QTreeView::item:hover {
+	background-color: rgb(249, 204, 158);
+}
+
+QTreeView::item:selected {
+	background-color: rgb(89, 52, 27);
+
+	color: rgb(250, 240, 202);
+	font-weight:bold;
+}
+
+QHeaderView::section{
+	background-color: rgb(250, 240, 202);
+	border: 1px solid  rgb(249, 204, 158);
+	font: 14px 'Georgia';
+}</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="font">
-           <font>
-            <family>Georgia</family>
-            <pointsize>11</pointsize>
-            <bold>true</bold>
-           </font>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="topMargin">
+           <number>0</number>
           </property>
-          <property name="styleSheet">
-           <string notr="true">
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="font">
+             <font>
+              <family>Georgia</family>
+              <pointsize>11</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
-          </property>
-          <property name="text">
-           <string>Delete Selected Menu</string>
-          </property>
-         </widget>
+border-radius: 5px;
+padding: 5px 5px 5px 5px;</string>
+            </property>
+            <property name="text">
+             <string>Delete Selected Menu</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
       <item>
-       <widget class="QWidget" name="" native="true">
+       <widget class="QWidget" name="widget" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(250, 240, 202);</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <property name="leftMargin">
-          <number>1</number>
+          <number>12</number>
          </property>
-         <item>
-          <widget class="QLabel" name="RestaurantLogo">
-           <property name="maximumSize">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
             <size>
-             <width>300</width>
-             <height>300</height>
+             <width>290</width>
+             <height>150</height>
             </size>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+           <property name="maximumSize">
+            <size>
+             <width>290</width>
+             <height>150</height>
+            </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">image: url(:/logo/pictures/logo 4.png);</string>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
+            <string notr="true">image: url(:/logo/pictures/logo 2.png);</string>
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="margin">
-            <number>6</number>
-           </property>
-           <property name="indent">
-            <number>-6</number>
            </property>
           </widget>
          </item>
@@ -144,11 +273,12 @@ border-radius: 10px
          </item>
          <item>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="1" column="0">
+           <item row="1" column="0" alignment="Qt::AlignRight">
             <widget class="QLabel" name="MenuPriceLabel">
              <property name="font">
               <font>
-               <pointsize>10</pointsize>
+               <family>Georgia</family>
+               <pointsize>12</pointsize>
                <bold>true</bold>
               </font>
              </property>
@@ -161,24 +291,75 @@ background-color: rgb(250, 240, 202);</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="MenuThumbnailLabel">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="MenuCategoryLineEdit">
              <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(250, 240, 202);</string>
-             </property>
-             <property name="text">
-              <string>Thumbnail</string>
+              <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+
+</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="MenuSupplyQuantityLineEdit">
+             <property name="styleSheet">
+              <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="MenuPriceLineEdit">
+             <property name="styleSheet">
+              <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="MenuNameLineEdit">
+             <property name="styleSheet">
+              <string notr="true">
+
+QLineEdit{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	font : 16 px 'Georgia';
+	padding: 3px 10px 3px 10px;
+	border: 2px solid rgb(212, 108, 78);
+}
+
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
               <widget class="QLabel" name="MenuPicture">
@@ -188,18 +369,130 @@ background-color: rgb(250, 240, 202);</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="MenuFilePath">
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="MenuFilePath">
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>(Select a picture)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0" alignment="Qt::AlignRight">
+            <widget class="QLabel" name="MenuCategoryLabel">
+             <property name="font">
+              <font>
+               <family>Georgia</family>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);</string>
+             </property>
+             <property name="text">
+              <string>Category</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" alignment="Qt::AlignRight">
+            <widget class="QLabel" name="MenuSupplyQuantityLabel">
+             <property name="font">
+              <font>
+               <family>Georgia</family>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);</string>
+             </property>
+             <property name="text">
+              <string>Supply Quantity</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignRight">
+            <widget class="QLabel" name="MenuNameLabel">
+             <property name="font">
+              <font>
+               <family>Georgia</family>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);</string>
+             </property>
+             <property name="text">
+              <string>Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <item alignment="Qt::AlignRight">
+              <widget class="QLabel" name="MenuThumbnailLabel">
                <property name="font">
                 <font>
-                 <pointsize>11</pointsize>
+                 <family>Georgia</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">color: rgb(0, 0, 0);</string>
+                <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);</string>
                </property>
                <property name="text">
-                <string>(Select a picture)</string>
+                <string>Thumbnail:</string>
                </property>
               </widget>
              </item>
@@ -216,7 +509,8 @@ background-color: rgb(250, 240, 202);</string>
                 <string notr="true">
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+padding: 5px 5px 5px 5px;</string>
                </property>
                <property name="text">
                 <string>Add Image</string>
@@ -225,91 +519,20 @@ border-radius: 5px;</string>
              </item>
             </layout>
            </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="MenuSupplyQuantityLabel">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(250, 240, 202);</string>
-             </property>
-             <property name="text">
-              <string>Supply Quantity</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="MenuCategoryLabel">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(250, 240, 202);</string>
-             </property>
-             <property name="text">
-              <string>Category</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="MenuCategoryLineEdit">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="MenuPriceLineEdit">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="MenuSupplyQuantityLineEdit">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="MenuNameLineEdit">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(249, 204, 158);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="MenuNameLabel">
-             <property name="font">
-              <font>
-               <family>Segoe UI</family>
-               <pointsize>11</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(250, 240, 202);</string>
-             </property>
-             <property name="text">
-              <string>Name</string>
-             </property>
-            </widget>
-           </item>
           </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="AddMenuButton">
@@ -324,12 +547,26 @@ background-color: rgb(250, 240, 202);</string>
             <string notr="true">
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+padding: 5px 5px 5px 5px;</string>
            </property>
            <property name="text">
             <string>Add to Menu List</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>
@@ -353,8 +590,15 @@ border-radius: 5px;</string>
       </item>
       <item>
        <widget class="QLabel" name="NoticeLabel">
+        <property name="font">
+         <font>
+          <family>Georgia</family>
+          <pointsize>12</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
+         <string notr="true">color: rgb(250, 240, 202);</string>
         </property>
         <property name="text">
          <string>Changes are not automatically saved!</string>
@@ -374,7 +618,8 @@ border-radius: 5px;</string>
          <string notr="true">
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+padding: 5px 5px 5px 5px;</string>
         </property>
         <property name="text">
          <string>Save and Close</string>
@@ -404,7 +649,7 @@ border-radius: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>901</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

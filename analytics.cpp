@@ -37,7 +37,9 @@ Analytics::Analytics(QWidget *parent) :
     endDate = QDate::currentDate();
     ui->StartDate->setText(startDate.toString());
     ui->EndDate->setText(endDate.toString());
+    ui->OrderQuantitiesList->setIndentation(0);
 
+    ui->CloseButton->mapToGlobal(QPoint(10,10));
     on_UpdateButton_clicked();
 }
 
@@ -222,7 +224,7 @@ void Analytics::on_UpdateButton_clicked()
 
 
     //This shall be uncommented in final version
-    /*
+
 
     QCPBars *salesGraph = new QCPBars(ui->Graph->xAxis,ui->Graph->yAxis);
     //salesGraph->setName("Test");
@@ -243,11 +245,9 @@ void Analytics::on_UpdateButton_clicked()
 
     //ui->Graph->addGraph(ui->Graph->yAxis,ui->Graph->xAxis);
 
-
-
     ui->Graph->replot();
 
-    */
+
 }
 
 

@@ -50,7 +50,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>413</width>
+        <width>417</width>
         <height>498</height>
        </rect>
       </property>
@@ -295,10 +295,19 @@ background:none;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(250, 240, 202);
-border-radius: 10px
-</string>
+      <string notr="true">
+QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+	padding: 5px 0px 5px 0px;
+}
+QPushButton::hover{
+	border: 2px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 2px solid rgb(89, 52, 27);
+}</string>
      </property>
      <property name="text">
       <string>Close</string>

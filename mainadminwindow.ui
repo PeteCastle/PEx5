@@ -56,6 +56,9 @@
             <bold>true</bold>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(249, 204, 158);</string>
+          </property>
           <property name="text">
            <string>Tom's Grill</string>
           </property>
@@ -67,6 +70,9 @@
            <font>
             <family>Georgia</family>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(249, 204, 158);</string>
           </property>
           <property name="text">
            <string>Admin Panel</string>
