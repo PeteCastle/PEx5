@@ -8,6 +8,7 @@ MainAdminWindow::MainAdminWindow(QWidget *parent) :
     ui(new Ui::MainAdminWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainAdminWindow::~MainAdminWindow()

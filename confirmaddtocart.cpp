@@ -54,7 +54,7 @@ void ConfirmAddToCart::on_addButton_clicked()
         ui->Price->setText(QString::number(currentPrice));
     }
     else{
-        QMessageBox::information(this, "Out of stock",  "Order amount has alread reached the stock available");
+        QMessageBox::information(nullptr, "Out of stock",  "Order amount has already reached the current stock available");
         return;
     }
 }

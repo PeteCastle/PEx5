@@ -14,11 +14,12 @@
    <string>Add to Cart</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(212, 108, 78);</string>
+   <string notr="true">background-color: rgb(212, 108, 78);
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QWidget" name="" native="true">
+    <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(250, 240, 202);
@@ -27,26 +28,7 @@ border-radius: 10px
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="10,20,0,50">
-        <item>
-         <widget class="QPushButton" name="backButton">
-          <property name="font">
-           <font>
-            <family>Georgia</family>
-            <pointsize>11</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(249, 204, 158);
-color: rgb(89, 52, 27);
-border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Cancel</string>
-          </property>
-         </widget>
-        </item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="10,80,10">
         <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
@@ -60,7 +42,7 @@ border-radius: 10px;</string>
           </property>
          </spacer>
         </item>
-        <item>
+        <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label">
           <property name="font">
            <font>
@@ -104,7 +86,7 @@ border-radius: 10px;</string>
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>(PHOTO HERE)</string>
+         <string>Product Photo</string>
         </property>
        </widget>
       </item>
@@ -112,7 +94,8 @@ border-radius: 10px;</string>
        <widget class="QLabel" name="Name">
         <property name="font">
          <font>
-          <pointsize>11</pointsize>
+          <family>Georgia</family>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -120,36 +103,148 @@ border-radius: 10px;</string>
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>Product Name</string>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="subtractButton">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="label_2">
           <property name="font">
            <font>
             <family>Georgia</family>
-            <pointsize>11</pointsize>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Quantity:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="3">
+         <widget class="QPushButton" name="AddToCart">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>18</pointsize>
             <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(249, 204, 158);
-color: rgb(89, 52, 27);
-border-radius: 10px;</string>
+           <string notr="true">QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+          </property>
+          <property name="text">
+           <string>Add to Cart</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>14</height>
+           </size>
+          </property>
+          <property name="default">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="backButton">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="subtractButton">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
           </property>
           <property name="text">
            <string>-</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="addButton">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(249, 204, 158);
+	color: rgb(89, 52, 27);
+	border-radius: 10px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
+          </property>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
          <widget class="QLabel" name="Amount">
           <property name="font">
            <font>
-            <pointsize>11</pointsize>
+            <family>Georgia</family>
+            <pointsize>16</pointsize>
             <bold>true</bold>
            </font>
           </property>
@@ -162,33 +257,18 @@ border-radius: 10px;</string>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="addButton">
-          <property name="font">
-           <font>
-            <family>Georgia</family>
-            <pointsize>11</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(249, 204, 158);
-color: rgb(89, 52, 27);
-border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>+</string>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1" colspan="3" alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="Price">
           <property name="font">
            <font>
-            <pointsize>11</pointsize>
-            <bold>true</bold>
+            <family>Georgia</family>
+            <pointsize>14</pointsize>
+            <bold>false</bold>
            </font>
           </property>
           <property name="whatsThis">
@@ -200,28 +280,25 @@ border-radius: 10px;</string>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Price&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Subtotal:</string>
+          </property>
          </widget>
         </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QPushButton" name="AddToCart">
-        <property name="font">
-         <font>
-          <family>Georgia</family>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(249, 204, 158);
-color: rgb(89, 52, 27);
-border-radius: 10px;</string>
-        </property>
-        <property name="text">
-         <string>Add to Cart</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>

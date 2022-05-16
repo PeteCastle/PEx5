@@ -26,13 +26,13 @@ void LandingPage::on_adminButton_clicked(){
 
     AskCredentials *askCredentials = new AskCredentials(this,1);
     askCredentials->setWindowModality(Qt::ApplicationModal);
+    askCredentials-
     askCredentials->exec();
 
-    bool test = askCredentials->getResult();
-    qDebug() << test;
-
-    if(test){
+    bool loginSuccess = askCredentials->getResult();
+    if(loginSuccess){
         MainAdminWindow *adminWindow = new MainAdminWindow(this);
+
         adminWindow->show();
         adminWindow->setWindowModality(Qt::ApplicationModal);
     }

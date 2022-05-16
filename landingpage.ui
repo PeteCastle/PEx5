@@ -96,9 +96,19 @@ background-color: rgb(250, 240, 202);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(249, 230, 153);
+           <string notr="true">
+
+QPushButton{
+	background-color: rgb(249, 230, 153);
 color: rgb(89, 52, 27);
-border-radius: 10px</string>
+border-radius: 10px
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
           </property>
           <property name="text">
            <string>ADMIN</string>
@@ -133,9 +143,19 @@ border-radius: 10px</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(249, 230, 153);
+           <string notr="true">
+
+QPushButton{
+	background-color: rgb(249, 230, 153);
 color: rgb(89, 52, 27);
-border-radius: 10px</string>
+border-radius: 10px
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
           </property>
           <property name="text">
            <string>CUSTOMER</string>

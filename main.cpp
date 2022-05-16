@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QFontDatabase::addApplicationFont(":/fonts/fonts/Monaco.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/fonts/Amsterdam Traveling.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/fonts/AmsterdamLentteria-JRVLx.otf");
 
     QDir *dir = new QDir();
     QString resourcesFileAbsolute = dir->absolutePath();

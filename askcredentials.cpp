@@ -63,17 +63,17 @@ void AskCredentials::on_pushButton_clicked()
         CredentialsFile.close();
 
 
-        QMessageBox::information(this, "Success", "Successfully changed username and password.");
+        QMessageBox::information(nullptr, "Success", "Successfully changed username and password.");
         this->close();
     }
     else if(mode2==1){
         if(ui->UsernameLineEdit->text()==username && ui->PasswordLineEdit->text()==password){
-            QMessageBox::information(this,"Login Success", "Success!");
+            QMessageBox::information(nullptr,"Login Success", "Success!");
             validity = 1;
             this->close();
         }
         else{
-            QMessageBox::information(this,"Wrong Credentials", "Username and Password are incorrect");
+            QMessageBox::information(nullptr,"Wrong Credentials", "Username and Password are incorrect");
             validity = 0;
         }
     }

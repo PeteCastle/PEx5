@@ -101,6 +101,16 @@ void Analytics::on_UpdateButton_clicked()
             filteredDate.append(tempDate);
         }
     }
+
+    //Set default value for every widget
+    if(filteredDate.isEmpty()){
+        QMessageBox::information(nullptr, "Empty Transactions List", "No recorded transactions between " + startDate.toString("yyyy-MM-dd") + " and " + endDate.toString("yyyy-MM-dd"));
+        ui->SummaryStatistics->clearContents();
+        ui->OrderQuantitiesList->setModel(nullptr);
+        ui->TransactionsList->setModel(nullptr);
+        return;
+    }
+
     for(int i=0; i<filteredDate.size();i++){
         QDir *transactionFilesDir = new QDir(transactionHistoryFolderLocation + "/" + filteredDate[i].toString("yyyy-MM-dd"));
         QStringList transactionFiles = transactionFilesDir->entryList(QDir::Files);
@@ -195,10 +205,8 @@ void Analytics::on_UpdateButton_clicked()
     }
 
     //Generate Graph
-
     QVector<double> xAxis(productStatistics.size());
     QVector<double> yAxis(productStatistics.size());
-
 
     double maxY=0, maxX=0;
     for(int i=0; i<productStatistics.size();i++){
@@ -210,6 +218,8 @@ void Analytics::on_UpdateButton_clicked()
         }
         maxX++;
     }
+
+
 
     //This shall be uncommented in final version
     /*
@@ -247,6 +257,9 @@ void Analytics::on_ViewTransactionButton_clicked()
         return;
     }
     int index = ui->TransactionsList->currentIndex().row();
+    if(index==-1){
+        return;
+    }
 
     ViewReceipt *viewReceipt = new ViewReceipt(this, filteredTransactionFiles[index]);
     viewReceipt->setWindowTitle("Recipe");

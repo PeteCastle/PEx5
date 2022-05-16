@@ -18,6 +18,65 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>25</number>
+    </property>
+    <property name="rightMargin">
+     <number>25</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="40,60">
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>75</width>
+          <height>75</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/logo/pictures/logo 4.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0">
+        <item alignment="Qt::AlignBottom">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Tom's Grill</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+           </font>
+          </property>
+          <property name="text">
+           <string>Admin Panel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
     <item>
      <widget class="QPushButton" name="ModifyInventoryButton">
       <property name="sizePolicy">
@@ -35,9 +94,21 @@
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
        <string>Modify Inventory</string>
@@ -61,9 +132,21 @@ border-radius: 5px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
        <string>Show Inventory</string>
@@ -87,12 +170,24 @@ border-radius: 5px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
-       <string>Analytics</string>
+       <string>Show Business Analytics (Sales)</string>
       </property>
      </widget>
     </item>
@@ -113,9 +208,21 @@ border-radius: 5px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
        <string>Modify Promo Codes</string>
@@ -139,9 +246,21 @@ border-radius: 5px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
        <string>Change Password</string>
@@ -165,9 +284,21 @@ border-radius: 5px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
+
+
+
+QPushButton{
 background-color: rgb(249, 204, 158);
 color: rgb(89, 52, 27);
-border-radius: 5px;</string>
+border-radius: 5px;
+}
+QPushButton::hover{
+	border: 5px solid rgb(138, 80, 42);
+}
+QPushButton::pressed{
+	border: 5px solid rgb(89, 52, 27);
+}</string>
       </property>
       <property name="text">
        <string>Modify Products</string>
@@ -176,17 +307,9 @@ border-radius: 5px;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>444</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

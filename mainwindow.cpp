@@ -21,54 +21,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QStandardItemModel *stdModel = new QStandardItemModel(this);
+
     ui->listView->setModel(stdModel);
     ui->listView->setIconSize(QSize(50,50));
 
     foreach(QString filename, CategoriesList) {
-        /*
-        QStringListModel *stdModel = new QStringListModel(this);
-
-        ui->listView->setModel(stdModel);
-        qDebug() << filename;*/
-
-        stdModel->appendRow(new QStandardItem(filename));
+        QStandardItem *newItem = new QStandardItem(filename);
+        newItem->setTextAlignment(Qt::AlignCenter);
+        stdModel->appendRow(newItem);
     }
-    /*
-    QStringList headerNames = {"Product Name","Amount","Subtotal"};
-    stdModel->setHorizontalHeaderLabels(headerNames);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->tableView->setRowCount(1);
-    ui->tableView->setColumnCount(3);
-
-
-
-    for(int i=0; i<CategoriesList.size();i++){
-        QWidget *newTab = new QWidget(this);
-
-        QGridLayout *tabMenuLayout = new QGridLayout(newTab);
-
-
-        for(int j=0; j<MenuList.size();j++){
-            int row=0, col=0;
-            if(MenuList[j].category==CategoriesList[i]){
-                QPushButton *menuButton = new QPushButton("dsfdsf", newTab);
-                tabMenuLayout->addWidget(menuButton,row,col);
-                qDebug() << row << col;
-                if(col==1){
-                   row++;
-                   col=0;
-                }
-                else{
-                  col++;
-                }
-            }
-
-        }
-
-
-        newTab->setLayout(tabMenuLayout);
-        ui->tabWidget->addTab(newTab,CategoriesList[i]);
-    }*/
 }
 
 MainWindow::~MainWindow()
@@ -99,10 +60,21 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
                                      "padding:0px;"
                                      "image-position:top;"
                                      "text-align:bottom;"
+                                     "}"
+                                     "QPushButton{"
+                                         "background-color: rgb(249, 204, 158);"
+                                         "color: rgb(89, 52, 27);"
+                                         "border-radius: 10px;"
+                                     "}"
+                                     "QPushButton::hover{"
+                                         "border: 5px solid rgb(138, 80, 42);"
+                                     "}"
+                                     "QPushButton::pressed{"
+                                         "border: 5px solid rgb(89, 52, 27);"
                                      "}");
             //newButton->setText(MenuList[i].name);
             newButton->setIcon(icon);
-            newButton->setIconSize(QSize(230,230));
+            newButton->setIconSize(QSize(210,210));
             layout->addWidget(newButton,row,col);
             connect(newButton, SIGNAL(clicked()), signalMapper, SLOT(map()));
             signalMapper->setMapping(newButton, MenuList[i].name + "|" + QString::number(MenuList[i].price) + "|" + QString::number(MenuList[i].supply));
@@ -137,9 +109,6 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
 
 void MainWindow::confirmAddtoCart(QString parameters){
     QStringList splitParameters = parameters.split('|');
-    //qDebug() << splitParameters;
-
-
 
     if(splitParameters[2].toInt()==0){
         QMessageBox::information(this, "Out of stock",  "This item is currently out of stock!");
@@ -156,8 +125,6 @@ void MainWindow::confirmAddtoCart(QString parameters){
         CurrentOrders.push_back(orderParameters);
         updateCartMenu();
     }
-
-
 
 }
 
@@ -183,10 +150,12 @@ void MainWindow::updateCartMenu(){
     ui->treeView->setModel(standardModel);
     ui->treeView->setIconSize(QSize(20,20));
     ui->treeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->treeView->header()->setDefaultAlignment(Qt::AlignCenter);
     ui->treeView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->treeView->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     ui->treeView->header()->setSectionResizeMode(2, QHeaderView::Stretch);
     ui->treeView->header()->setStretchLastSection(false);
+    ui->treeView->setIndentation(0);
 }
 void MainWindow::on_CheckoutButton_clicked()
 {
@@ -205,6 +174,9 @@ void MainWindow::on_CheckoutButton_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     int index = ui->treeView->currentIndex().row();
+    if(index ==-1){
+        return;
+    }
     CurrentOrders.erase(CurrentOrders.begin()+index);
     updateCartMenu();
 }
