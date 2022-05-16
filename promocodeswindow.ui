@@ -6,32 +6,74 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>578</width>
-    <height>395</height>
+    <width>696</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Modify Promo Codes</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 108, 78);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item alignment="Qt::AlignRight">
-       <widget class="QLabel" name="RestaurantNameLogo">
-        <property name="text">
-         <string>Restaurant Logo</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="RestaurantNameLabel">
-        <property name="text">
-         <string>Restaurant Name</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QWidget" name="" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item alignment="Qt::AlignRight">
+        <widget class="QLabel" name="RestaurantNameLogo">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/logo/pictures/logo 2.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="RestaurantNameLabel">
+         <property name="minimumSize">
+          <size>
+           <width>350</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Vineta BT</family>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(208, 208, 208);</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Tom's Grill&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -39,145 +81,252 @@
        <number>0</number>
       </property>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,75,15">
-        <property name="leftMargin">
-         <number>10</number>
+       <widget class="QWidget" name="" native="true">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
         </property>
-        <property name="topMargin">
-         <number>10</number>
-        </property>
-        <property name="rightMargin">
-         <number>10</number>
-        </property>
-        <property name="bottomMargin">
-         <number>10</number>
-        </property>
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="RemovePromoCodeLabel">
-          <property name="text">
-           <string>Remove Promo Codes</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QListWidget" name="PromoCodesList"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="RemovePromoCodeButton">
-          <property name="text">
-           <string>Remove Selected Promo Code</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,75,15">
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
+          <number>10</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="RemovePromoCodeLabel">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Remove Promo Codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="PromoCodesList">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(249, 204, 158);
+border-radius: 10px
+</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="RemovePromoCodeButton">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Remove Selected Promo Code</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
-        <property name="leftMargin">
-         <number>10</number>
+       <widget class="QWidget" name="" native="true">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
         </property>
-        <property name="topMargin">
-         <number>10</number>
-        </property>
-        <property name="rightMargin">
-         <number>10</number>
-        </property>
-        <property name="bottomMargin">
-         <number>10</number>
-        </property>
-        <item>
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="AddPromoCodeLabel">
-          <property name="text">
-           <string>Add Promo Codes</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="PromoNameButton">
-            <property name="text">
-             <string>Promo Name</string>
+        <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="AddPromoCodeLabel">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Add Promo Codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="" native="true">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(249, 204, 158);
+border-radius: 10px
+</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <property name="topMargin">
+             <number>1</number>
             </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="PromoNameLineEdit"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="DiscountAmountButton">
-            <property name="text">
-             <string>Discount Amount</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="DiscountAmountLineEdit"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="DiscountTypeButton">
-            <property name="text">
-             <string>Discount Type</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item alignment="Qt::AlignHCenter">
-             <widget class="QRadioButton" name="FlatDiscountButton">
+            <item row="0" column="0">
+             <widget class="QLabel" name="PromoNameButton">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
-               <string>Flat</string>
+               <string>Promo Name</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
-             <widget class="QRadioButton" name="PercentageButton">
-              <property name="text">
-               <string>Percentage</string>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="PromoNameLineEdit">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
               </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="DiscountAmountButton">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Discount Amount</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="DiscountAmountLineEdit">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="DiscountTypeButton">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Discount Type</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QWidget" name="" native="true">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QRadioButton" name="FlatDiscountButton">
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Flat</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QRadioButton" name="PercentageButton">
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Percentage</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QPushButton" name="AddPromoCodeButton">
-          <property name="text">
-           <string>Add Promo Code</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="AddPromoCodeButton">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Add Promo Code</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </item>
@@ -188,6 +337,15 @@
       </property>
       <item alignment="Qt::AlignRight">
        <widget class="QLabel" name="Notice">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Changes are not automatically saved!</string>
         </property>
@@ -195,6 +353,19 @@
       </item>
       <item>
        <widget class="QPushButton" name="SaveAndCloseButton">
+        <property name="font">
+         <font>
+          <family>Georgia</family>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(249, 204, 158);
+border-radius: 10px
+</string>
+        </property>
         <property name="text">
          <string>Save and Close</string>
         </property>

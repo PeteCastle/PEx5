@@ -5,4 +5,10 @@
     <qresource prefix="/pictures">
         <file>pictures/NoThumbnail.jpg</file>
     </qresource>
+    <qresource prefix="/logo">
+        <file>pictures/logo 4.png</file>
+        <file>pictures/logo 1.png</file>
+        <file>pictures/logo 2.png</file>
+        <file>pictures/logo 3.png</file>
+    </qresource>
 </RCC>

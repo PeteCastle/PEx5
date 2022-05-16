@@ -6,37 +6,71 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>406</width>
+    <height>326</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Calendar</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 108, 78);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item alignment="Qt::AlignRight">
+     <item>
       <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/logo/pictures/logo 4.png);</string>
+       </property>
        <property name="text">
-        <string>Restaurant Logo</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Vineta BT</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(208, 208, 208);</string>
+       </property>
        <property name="text">
-        <string>Restaurant Name</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Tom's Grill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QCalendarWidget" name="calendarWidget"/>
+    <widget class="QCalendarWidget" name="calendarWidget">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">
+     <property name="font">
+      <font>
+       <family>Georgia</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 10px;</string>
+     </property>
      <property name="text">
       <string>Select Date</string>
      </property>

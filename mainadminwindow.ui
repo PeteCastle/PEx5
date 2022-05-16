@@ -6,17 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>444</width>
+    <height>381</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Admin's Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 108, 78);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="ModifyInventoryButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Modify Inventory</string>
       </property>
@@ -24,6 +46,25 @@
     </item>
     <item>
      <widget class="QPushButton" name="ShowInventoryButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Show Inventory</string>
       </property>
@@ -31,6 +72,25 @@
     </item>
     <item>
      <widget class="QPushButton" name="AnalyticsButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Analytics</string>
       </property>
@@ -38,6 +98,25 @@
     </item>
     <item>
      <widget class="QPushButton" name="ModifyPromoCodesButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Modify Promo Codes</string>
       </property>
@@ -45,6 +124,25 @@
     </item>
     <item>
      <widget class="QPushButton" name="ChangePasswordButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Change Password</string>
       </property>
@@ -52,6 +150,25 @@
     </item>
     <item>
      <widget class="QPushButton" name="AddProductButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Georgia</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(249, 204, 158);
+color: rgb(89, 52, 27);
+border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string>Modify Products</string>
       </property>
@@ -64,12 +181,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>444</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

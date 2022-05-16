@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>437</width>
-    <height>548</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Official Receipt</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(231, 231, 231);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
    <item>
@@ -47,7 +50,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>417</width>
+        <width>413</width>
         <height>498</height>
        </rect>
       </property>
@@ -284,6 +287,19 @@ background:none;</string>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">
+     <property name="font">
+      <font>
+       <family>Georgia</family>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(250, 240, 202);
+border-radius: 10px
+</string>
+     </property>
      <property name="text">
       <string>Close</string>
      </property>
